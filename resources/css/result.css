@@ -975,11 +975,6 @@ margin-bottom:3%;
 }
 
 
-
-
-
-
-
 /* 디자인팀수정_260724 */
 .result_prem_mainTxt, .reult_matBot { line-height: 140%; }
 .reult_matBot { font-size: 1.7em; color: rgba(255, 255, 255, 0.85);  }
@@ -987,7 +982,29 @@ margin-bottom:3%;
 .crt_pageNav button { background: none; color: #ddc49b; font-size: 4em; line-height: 1; cursor: pointer; }
 .crt_pageNav button:disabled { opacity: .3; cursor: default; }
 .crt_pageNav span { color: #fff; font-size: 2em; letter-spacing: .05em; }
-.reult_premBot{ font-size: 1.7em; color: rgba(255, 255, 255, 0.85);  }
+.reult_premBot, .result_frm p { font-size: 1.7em; color: rgba(255, 255, 255, 0.85);  }
 .result_prem_pointTxt, .result_mat_pointTxt { font-size: 1.9em; line-height: 145%; }
 .result_explainTxtBox{ font-size: 1.7em;  color: rgba(255, 255, 255, 0.85);  }
 .result_summaryBox .result_summaryTxt { font-size: 1.7em;}
+
+
+/* 디자인팀 수정_260729 */
+
+.res_pre9_wrap { margin-top: -55%; }
+
+.result_box { text-align: center; border: 1px solid #DDC49C; padding: 3em 0; width: 90%; margin: 0 auto 2.5em; position: relative;
+background: hwb(240 0% 89% / 0.8); } 
+.result_box h2 { color: #D7B783; font-family: 'Noto Serif KR', serif; font-weight: 500; line-height: 140%;
+font-size: 2em; }
+
+.result_box::before, .result_box::after { position: absolute; width: 5%; height: 1.2em;
+font-family: 'Noto Serif KR'; line-height: 100%; }
+.result_box::before { content: ""; top: 1.2em; left: 1.2em; background: url(../img/result/result_last.png)center/cover no-repeat; }
+.result_box::after { content: ""; bottom: 1.2em; right: 1.2em; background: url(../img/result/result_first.png)center/cover no-repeat; }
+
+.resultPrem_sec9 .saju_frameBox { --color-line: #D7B783; width: 90%; margin: 0 auto; padding: 10% 1.5em; }
+.result_frm h3 { color: #DDC49B; text-align: center; font-size: 2.5em; margin-bottom: 1em; 
+font-family: 'Noto Serif KR', serif; font-weight: 700;}
+.result_frm p { color: #fff; margin-bottom: 1.5em; line-height: 150%;; }
+.result_frm p:last-child { margin-bottom: 0; }
+.resultPrem_sec9 .result_premTop { padding: 15% 0; }

@@ -815,7 +815,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 페이지네이션 구성_260724_주한 (res_pre)
 (function () {
     var sections = Array.prototype.slice.call(
-        document.querySelectorAll('#res_pre1,#res_pre2,#res_pre3,#res_pre4,#res_pre5,#res_pre6,#res_pre7,#res_pre8')
+        document.querySelectorAll('#res_pre1,#res_pre2,#res_pre3,#res_pre4,#res_pre5,#res_pre6,#res_pre7,#res_pre8,#res_pre9')
     );
     var total = sections.length;
     if (total === 0) return;
