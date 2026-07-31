@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+
 /* 오행별 글자색 */
 .saju_green { color: #00D623; }
 .saju_red { color: #FF3E71; }
@@ -997,7 +999,7 @@ background: hwb(240 0% 89% / 0.8); }
 .result_box h2 { color: #D7B783; font-family: 'Noto Serif KR', serif; font-weight: 500; line-height: 140%;
 font-size: 2em; }
 
-.result_box::before, .result_box::after { position: absolute; width: 5%; height: 1.2em;
+.result_box::before, .result_box::after { position: absolute; width: 1.5em; height: 1.2em;
 font-family: 'Noto Serif KR'; line-height: 100%; }
 .result_box::before { content: ""; top: 1.2em; left: 1.2em; background: url(../img/result/result_last.png)center/cover no-repeat; }
 .result_box::after { content: ""; bottom: 1.2em; right: 1.2em; background: url(../img/result/result_first.png)center/cover no-repeat; }
