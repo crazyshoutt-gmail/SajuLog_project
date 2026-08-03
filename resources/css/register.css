@@ -396,3 +396,11 @@ input:-webkit-autofill {
     opacity: 0.35;
     pointer-events: none;
 }
+
+
+/* 폼필드에서 관계 선택에따른 연애 상태 자동 적용에 관한 css  0803 */
+.js_register_userLove.is-auto {
+    background-color: #f0f0f0;
+    color: #888;
+    cursor: not-allowed;
+}

@@ -1,26 +1,73 @@
+// function registerUserTypeSelectChange(select) {
+//     const input_op1 = document.querySelector('.js_register_userType_direct');
+//     const inputBox_op1 = document.querySelector('.register_hideInput');
+//     const nameStr_op1 = "option1";
+
+//     if (select.value === 'direct') {
+//         // 직접 입력을 선택한 경우
+//         select.removeAttribute('name');
+//         select.required = false;      // select의 필수 해제
+
+//         input_op1.name = nameStr_op1;
+//         input_op1.required = true;       // input을 필수로 설정
+//         inputBox_op1.classList.add('on');
+//         input_op1.focus();
+//     } else {
+//         // 리스트 중 하나를 선택한 경우
+//         select.name = nameStr_op1;
+//         select.required = true;      // select를 필수로 설정
+
+//         input_op1.removeAttribute('name');
+//         input_op1.required = false;      // input 필수 해제
+//         inputBox_op1.classList.remove('on');
+//         input_op1.value = '';
+//     }
+// }
+
+//0803 수정
 function registerUserTypeSelectChange(select) {
     const input_op1 = document.querySelector('.js_register_userType_direct');
     const inputBox_op1 = document.querySelector('.register_hideInput');
     const nameStr_op1 = "option1";
 
     if (select.value === 'direct') {
-        // 직접 입력을 선택한 경우
         select.removeAttribute('name');
-        select.required = false;      // select의 필수 해제
-
+        select.required = false;
         input_op1.name = nameStr_op1;
-        input_op1.required = true;       // input을 필수로 설정
+        input_op1.required = true;
         inputBox_op1.classList.add('on');
         input_op1.focus();
     } else {
-        // 리스트 중 하나를 선택한 경우
         select.name = nameStr_op1;
-        select.required = true;      // select를 필수로 설정
-
+        select.required = true;
         input_op1.removeAttribute('name');
-        input_op1.required = false;      // input 필수 해제
+        input_op1.required = false;
         inputBox_op1.classList.remove('on');
         input_op1.value = '';
+    }
+
+    // 관계에 따라 연애상태 자동 세팅
+    updateLoveStatusByRelation(select.value);
+}
+
+function updateLoveStatusByRelation(relationValue) {
+    const loveSelect = document.querySelector('.js_register_userLove');
+    const autoMap = {
+        '배우자': '기혼',
+        '연인': '연애중'
+    };
+
+    if (autoMap[relationValue]) {
+        loveSelect.value = autoMap[relationValue];
+        loveSelect.disabled = true;      // 선택 못 하게 잠금
+        loveSelect.classList.add('is-auto'); // CSS로 회색 처리용 클래스
+    } else {
+        // 본인/부모/자녀/친구/직접입력 → 사용자가 직접 선택
+        if (loveSelect.disabled) {
+            loveSelect.value = ''; // 잠겨있던 자동값 초기화
+        }
+        loveSelect.disabled = false;
+        loveSelect.classList.remove('is-auto');
     }
 }
 
