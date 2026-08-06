@@ -286,7 +286,8 @@ document.addEventListener('DOMContentLoaded', renderSaju);
 function formatTitleWithBreak(title) {
     const idx = title.indexOf(',');
     if (idx === -1) return title; // 콤마 없으면 그대로
-    return title.slice(0, idx + 1) + '<br>' + title.slice(idx + 1).trim();
+    // return title.slice(0, idx + 1) + '<br>' + title.slice(idx + 1).trim();
+    return title.slice(0, idx + 1) + title.slice(idx + 1).trim();
 }
 
 // ============================================================
@@ -667,7 +668,7 @@ function renderReviews() {
 document.addEventListener('DOMContentLoaded', () => {
   const loadBox   = document.querySelector('.result_loadBox');
   const gage      = document.querySelector('.result_gage');
-  const loadTxt   = document.querySelector('.result_loadTxt');
+  const loadTxt   = document.querySelector('.result_loadTxt1');
   const loadingP  = document.querySelector('.result_loadingBox > p');
 
   const DURATION  = 8500;
