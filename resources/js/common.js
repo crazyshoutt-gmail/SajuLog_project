@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("paymentContainer");
     if (!container) return;
 
-    fetch("./product.html")
+    fetch("./product_type2.html")
         .then(res => res.text())
         .then(html => {
 

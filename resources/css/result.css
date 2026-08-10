@@ -164,7 +164,7 @@ section img{width: 100%; object-fit: contain;}
 .result_explainList{position: relative; z-index: 3;}
 .result_explain_claim{
     padding: 1.5em 4%; font-size: 1.1em; background-color: #00001d00; /* 1.8em -> 1.1em */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); padding-top: 1%;
+ padding-top: 1%;
 }
 
 /* .result_explain_claim p{font-family: 'YeogiOttaeJalnanGothic'; margin-bottom: 0.5em; color: #ddc49b; font-size: 1.1em;} */
@@ -1010,3 +1010,26 @@ font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_frm p { color: #fff; margin-bottom: 1.5em; line-height: 150%;; }
 .result_frm p:last-child { margin-bottom: 0; }
 .resultPrem_sec9 .result_premTop { padding: 15% 0; }
+
+/* 디자인팀 디자인 추가_260810 */
+.result_tit h3 { font-family: 'Noto Serif KR'; font-weight: 400; margin-bottom: .5em; font-size: 1.8em; }
+.result_tit h2 { font-family: 'Noto Serif KR'; color: #DDC49B; font-weight: 700; font-size: 3em; }
+.result_explainTitle { margin: -5% 0 5%; }
+.result_explainTitle img { width: 95%; margin: 0 auto; }
+
+.result_extit {  margin-bottom: 1.5em; }
+.result_extit span { color: #635639; font-size: 7em; line-height: 100%; }
+.result_extit strong { color: #DDC49B; font-size: 1.6em; font-weight: 700; display: block; margin-top: -2.5em; line-height: 130%; }
+
+
+.result_btm_tit { text-align: center; position: relative; z-index: 10; }
+.result_btm_tit div { width: 1px; height: 6em; background: linear-gradient(#666, #fff); margin: 0 auto 1.5em; }
+.result_btm_tit h2 { font-size: 2em;
+font-family: 'Noto Serif KR'; font-weight: 700;
+    background: linear-gradient(#FFFFFF, #999);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+ }
+
+ .result_btm > img { margin-top: -5%; position: relative; z-index: 0; }

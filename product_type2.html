@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://land.withusmk.co.kr/assets/saju/resources/img/ui/favicon.png">
+        <!-- <script src="https://land.withusmk.co.kr/assets/saju/resources/js/common.js"></script>
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/product.css">
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css"> -->
+        <script src="./resources/js/common.js"></script>
+        <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
+        <link rel="stylesheet" href="./resources/css/product.css">
+        <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
+        <title>충전하기-사주로그</title>
+    </head>
+
+    <body>
+        <!-- <header></header> -->
+        <!-- <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section> -->
+
+        <div class="payment_modal" id="paymentModal">
+            <div class="payment_dim"></div>
+
+            <section class="product">
+                <button class="close_btn">✕</button>
+
+                <div class="inner">
+
+                    <h1 style="text-align:center;color:#fff;margin-bottom:1em;font-size:3em;">결제하기</h1>
+
+                    <div class="price_choice">
+
+                        <div class="js_price_box" data-price="25900">
+                            <img src="./resources/img/ui/porduct_ico01.png" alt="공유 아이콘">
+                            <h3>25,900원에<br>결제하기</h3>
+                        </div>
+
+                        <div class="js_price_box share" data-price="9900">
+                            <img src="./resources/img/ui/porduct_ico02.png" alt="공유 아이콘">
+                            <h3>사주로그 공유하고<span>9,900원에 결제하기</span></h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product_choice">
+                        <div class="js_product_choice_box">신용/체크카드</div>
+                        <div class="js_product_choice_box">계좌이체</div>
+                        <div class="js_product_choice_box">카카오페이</div>
+                    </div>
+
+                    <div class="product_policy" style="margin-bottom: 1%;">
+                        <input type="checkbox" id="policy" class="js_product_check" checked required>
+                        <label for="policy">
+                            (필수) 이용약관, 개인정보처리방침 및 환불정책 내용을 확인하고 동의합니다.
+                        </label>
+                        <a href="./policy_1.html" target="_blank" style=" display: inline-block; font-size: 0.7em; opacity: 0.8; position: relative; z-index: 2;" id="go_policy1">[자세히보기]</a>
+                    </div>
+                    
+                    <div class="product_policy">
+                        <input type="checkbox" id="policy2" class="js_product_check" value="광고수신동의">
+                        <label for="policy2">
+                            (선택) 이벤트 및 혜택 안내를 위한 광고성 정보 수신에 동의합니다.
+                        </label>
+                        <a href="./policy_2.html" target="_blank" style="font-size: 0.8em; opacity: 0.8;" id="go_policy2">[자세히보기]</a>
+                    </div>
+
+                    <button class="js_product_btn">
+                        결제유형을 선택해주세요
+                    </button>
+
+                </div>
+            </section>
+        </div>
+
+       <script src="./resources/js/result_match.js"></script>
+    </body>
+</html>
