@@ -24,8 +24,8 @@ font-size: 2em; padding: .3em 0; transition: .3s; margin-bottom: .5em; }
 .js_product_check { appearance: none; width: 1.2em; height: 1.2em; border: 1.5px solid #fff; cursor: pointer; position: relative; flex-shrink: 0; }
 .product_policy label { font-weight: 200; cursor: pointer; font-size: .8em; }
 
-.js_product_btn { color: #999; font-size: 2.3em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
-margin: 1.5em auto 0 auto; transition: .3s; }
+.js_product_btn { width: 95%; color: #999; font-size: 2.3em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
+margin: 1.5em auto 0 auto; transition: .3s; box-sizing: border-box; }
 
 .js_product_box.active img { filter: brightness(.8); }
 
@@ -77,3 +77,21 @@ transition:.3s; color:#DDC49B; display: flex; flex-direction: column; align-item
 .share::after { content: '추천'; position: absolute; top: -.7em; right: 1em; color: #00001d;
 background: linear-gradient(15deg, #FFD900, #FFEB56, #F8FF94, #FFEB56, #FFD900);
 padding: .2em .5em; border-radius: 5em; font-size: 1.2em; font-weight: 700; border: 2px solid #DDC49B; }
+
+
+/* 260810추가 */
+.product_tit { font-family: 'Noto Serif KR'; font-weight: 700; }
+.product_tit span { display: block; font-size: 1.5em; margin-top: .2em; color: #DDC49B; }
+
+.price_type { grid-column: 1 / -1; background: #1b1b1b; padding: 15% 0 10%; border-radius: .5em; border: 1.5px solid #DDC49B; color: #fff; text-align: center; } 
+.price_type::after { content: '강추' }
+
+.price_type h3 { font-size: 2em; margin-bottom: 1em; font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100; }
+.price_type p { font-size: 1.5em; line-height: 135%; margin-bottom: 1.5em; }
+.price_type p span { background: #5f1600; display: inline-block; padding: .05em .2em; }
+
+.choice_type { display: block; }
+
+.choice_type { width: 95%; margin: 0 auto; }
+.price_type .js_product_btn {  font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100; padding-top: .5em; color: #000;
+background: linear-gradient(#D7B783, #CFAD7A, #CAA772); border: 2px solid #F4E9A3; }

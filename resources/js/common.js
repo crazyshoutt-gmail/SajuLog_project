@@ -543,12 +543,9 @@ function initPayment(){
     const productChoice = modal.querySelector(".product_choice");
     const modalTitle = modal.querySelector(".inner h1");
 
-    
-
-    // STATE (단일화)
+    let paymentType = "normal";
     let selectedPrice = null;
     let priceSelected = false;
-    let paymentType = "normal";
 
     // OPEN / CLOSE
     function openModal(){
@@ -707,7 +704,20 @@ function initPayment(){
             productBtn.textContent = "결제수단을 선택해주세요";
         }
 
-        openModal();
+    // ★ type2 (가격박스가 없는 고정가 모달) 처리
+if (modal.classList.contains("type2")) {
+    modalTitle.innerHTML = "자네의 운명을 알고 모르고는<span>큰 차이가 있다네</span>";
+    selectedPrice = 2900;
+    priceSelected = true;
+    productChoice.classList.add("show");
+    productBtn.classList.remove("active");
+    productBtn.classList.add("ready");
+    productBtn.textContent = "2,900원 결제하기";   // ← 여기만 변경
+}
+
+
+    openModal();
+
 
     });
 
@@ -842,3 +852,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     render();
 })();
+
+
+
+
+// 260810
+
+
+
+
+document.addEventListener("click", (e) => {
+    const box = e.target.closest(".choice_type_box");
+    if (!box) return;
+
+    const modal = document.querySelector("#paymentModal.type2");
+    if (!modal) return;
+
+    // 결제수단 전체에서 active 제거
+    modal.querySelectorAll(".choice_type_box").forEach(item => {
+        item.classList.remove("active");
+    });
+
+    // 클릭한 결제수단 강제 active
+    box.classList.add("active");
+
+    console.log("결제수단 active:", box.textContent.trim());
+});
+
