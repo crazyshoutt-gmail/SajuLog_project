@@ -134,8 +134,8 @@ padding: 0em .35em; border-radius: 5em; font-size: .65em; font-weight: 700; bord
 
 
 .pakage_box { font-family: 'YeogiOttaeJalnanGothic'; margin-bottom: 2.5em; }
-.pakage_box h3 { color: #DDC49B; background: #583700; width: fit-content; margin: 0 auto .5em; padding: .2em .3em; font-size: 2em;
+.pakage_box h3 { color: #DDC49B; background: #583700; width: fit-content; margin: 0 auto .5em; padding: .2em .3em; font-size: 1.6em;
 border-radius: .3em; font-weight: 100; }
 .pakage_box h3 span { text-decoration: line-through; }
-.pakage_box h2 { color: #F9BB56; font-size: 3.5em; font-weight: 100; margin-bottom: .1em; }
-.pakage_box img { width: 85%; }
+.pakage_box h2 { color: #F9BB56; font-size: 2.5em; font-weight: 100; margin-bottom: .1em; }
+.pakage_box img { width: 70%; }
