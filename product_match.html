@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://land.withusmk.co.kr/assets/saju/resources/img/ui/favicon.png">
+        <!-- <script src="https://land.withusmk.co.kr/assets/saju/resources/js/common.js"></script>
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/product.css">
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css"> -->
+        <script src="./resources/js/common.js"></script>
+        <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
+        <link rel="stylesheet" href="./resources/css/product.css">
+        <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
+        <title>충전하기-사주로그</title>
+    </head>
+
+    <body>
+        <!-- <header></header> -->
+        <!-- <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section> -->
+
+        <div class="payment_modal match" id="paymentModal">
+            <div class="payment_dim"></div>
+
+            <section class="product">
+                <button class="close_btn">✕</button>
+
+                <div class="inner">
+
+                    <h1 class="js_payment_title product_tit match_tit"style="text-align:center;color:#fff;margin-bottom:1.5em;font-size:2.5em; line-height: 140%;">
+                        자네의 운명을 알고 모르고는<span>큰 차이가 있다네</span>
+                    </h1>
+
+                    <div class="price_choice">
+
+    
+                        <div class="share price_type js_share_box active" data-share="1">
+                            <h3>양쪽 모두에게 도움되는 VIP 궁합</h3>
+                            <p style="font-size: 1.2em;"><span>인연의 깊이 · 궁합 점수 · 성향 분석 · 갈등 요인 · 해결 방법 등</span><br>사주로그는 두 사람의 사주를 정통 명리학의 기준으로 교차<br>분석하여 인연의 흐름과 궁합을 깊이 있게 해석합니다</p>
+                            
+                            <div class="choice_type">
+                                <div class="product_choice choice_type">
+                                    <div class="js_product_choice_box choice_type_box">신용/체크카드</div>
+                                    <div class="js_product_choice_box choice_type_box">계좌이체</div>
+                                    <div class="js_product_choice_box choice_type_box">카카오페이</div>
+                                </div>
+
+                                <div class="product_policy" style="margin-bottom: 1%;">
+                                    <input type="checkbox" id="policy" class="js_product_check" checked required>
+                                    <label for="policy">(필수) 이용약관, 개인정보처리방침 및 환불정책 내용을 확인하고 동의합니다.</label>
+                                    <a href="./policy_1.html" target="_blank" style="display: inline-block; font-size: 0.7em; opacity: 0.8; position: relative; z-index: 2;" id="go_policy1">[자세히보기]</a>
+                                </div>
+                                
+                                <div class="product_policy">
+                                    <input type="checkbox" id="policy2" class="js_product_check" value="광고수신동의">
+                                    <label for="policy2">(선택) 이벤트 및 혜택 안내를 위한 광고성 정보 수신에 동의합니다.</label>
+                                    <a href="./policy_2.html" target="_blank" style="font-size: 0.8em; opacity: 0.8;" id="go_policy2">[자세히보기]</a>
+                                </div>
+
+                                <button class="js_product_btn">2,900원 결제하기</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+       <script src="./resources/js/result_match.js"></script>
+
+
+<script>
+(function() {
+    var priceBtns = document.querySelectorAll('.price_btn');
+    priceBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();   // 추가
+
+            document.querySelectorAll('.price_btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            var target = btn.dataset.target;
+            document.querySelectorAll('.js_share_box').forEach(function(box) {
+                box.classList.toggle('active', box.dataset.share === target);
+            });
+        });
+    });
+})();
+</script>
+    </body>
+
+
+</html>

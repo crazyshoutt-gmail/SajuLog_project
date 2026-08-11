@@ -1015,7 +1015,7 @@ font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_tit h3 { font-family: 'Noto Serif KR'; font-weight: 400; margin-bottom: .5em; font-size: 1.8em; }
 .result_tit h2 { font-family: 'Noto Serif KR'; color: #DDC49B; font-weight: 700; font-size: 3em; }
 .result_explainTitle { margin: -5% 0 5%; }
-.result_explainTitle img { width: 95%; margin: 0 auto; }
+.result_explainTitle img { width: 95%; margin: 0 auto; display: block; }
 
 .result_extit {  margin-bottom: 1.5em; }
 .result_extit span { color: #635639; font-size: 7em; line-height: 100%; }
@@ -1026,10 +1026,17 @@ font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_btm_tit div { width: 1px; height: 6em; background: linear-gradient(#666, #fff); margin: 0 auto 1.5em; }
 .result_btm_tit h2 { font-size: 2em;
 font-family: 'Noto Serif KR'; font-weight: 700;
-    background: linear-gradient(#FFFFFF, #999);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
- }
+background: linear-gradient(#FFFFFF, #999);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}
 
- .result_btm > img { margin-top: -5%; position: relative; z-index: 0; }
+.result_btm > img { margin-top: -5%; position: relative; z-index: 1; }
+
+/* 260811 */
+.result_btm { position: relative;}
+.result_btm::after { content: ''; position: absolute; width: 100%; height: 30%; 
+background: linear-gradient(transparent, #000000 80%); bottom: 0; left: 0; }
+
+.product_tit span { line-height: 130%; }

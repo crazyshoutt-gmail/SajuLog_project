@@ -78,7 +78,7 @@ const sajuMatch = {
         nuserCounts:76,
         usersrelation:"서로를 완성해가는 그러한 인연이로다.",
         userAni:"한 사람은 빛이 되고, 한 사람은 그늘이 되어 <br> 한 사람은 마음을 흔들고, 다른 하나는 그 마음을 붙잡으니, <br> — 서로를 완성해가는 그러한 인연이로다.",
-        userfreeMat:"두 사람의 만남은 마치 오래전부터 정해진 듯하면서도,<br>아직은 그 뜻을 모두 드러내지 않은 인연이로다.<br>서로의 기운은 완전히 같지 않으나, 그렇기에<br>한쪽은 다른 한쪽에게서 익숙하지 않은 빛을 보게 되리라.<br><br>끌림은 있으나 그 끌림만으로는 모든 길이 평탄하지 않으니,<br>이 궁합에는 설렘과 함께 배워야 할 과제도 함께 놓여 있도다.<br>한 사람은 더 가까이 다가가고자 하고, 한 사람은<br>자신의 속도를 지키려 하니, 이 차이를 어찌 다스리느냐가 중요하리라.<br><br>그러나 부딪힘이 있다 하여 나쁜 인연이라 할 수는 없도다.<br>서로를 밀어내는 듯하면서도 다시 바라보게 되는 기운이 있으니,"
+        userfreeMat:"두 사람의 만남은 마치 오래전부터 정해진 듯하면서도,<br>아직은 그 뜻을 모두 드러내지 않은 인연이로다.<br>서로의 기운은 완전히 같지 않으나, 그렇기에<br>한쪽은 다른 한쪽에게서 익숙하지 않은 빛을 보게 되리라.<br><br><div class=\"result_extit\"><span>“</span><br><strong>두 사람에게 가장 중요한건<br>서로간의 존중일 수도 있습니다.</strong></div><br>그러나 부딪힘이 있다 하여 나쁜 인연이라 할 수는 없도다.<br>서로를 밀어내는 듯하면서도 다시 바라보게 되는 기운이 있으니,"
     },
     countTable: {
         allMat:82,
@@ -88,7 +88,6 @@ const sajuMatch = {
         usersrelationKeyword:['<span>끌림이 강한</span> 인연', '감정 <span>표현의 차이</span>', '<span>깊어질수록 시험이 오는</span> 관계']
     }
 };
-
 
 /**
  * 메인 렌더링 함수
@@ -391,6 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // animateMatchTable(); 
     setupKakaoUnlock();
   setupUnlockMat()
+  setupPriceBtnToggle();
     
 });
 
@@ -455,3 +455,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, INTERVAL);
 });
+
+// 260811
+
+function setupPriceBtnToggle() {
+    const priceBtns = document.querySelectorAll('.price_btn');
+    if (!priceBtns.length) return;
+
+    priceBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.price_btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const target = btn.dataset.target;
+            document.querySelectorAll('.js_share_box').forEach(box => {
+                box.classList.toggle('active', box.dataset.share === target);
+            });
+        });
+    });
+}

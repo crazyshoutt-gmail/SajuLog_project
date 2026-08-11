@@ -513,14 +513,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("paymentContainer");
     if (!container) return;
 
-    fetch("./product_type2.html")
+    const paymentSrc = container.dataset.paymentSrc || "./product_type2.html";
+
+    fetch(paymentSrc)
         .then(res => res.text())
         .then(html => {
-
             container.innerHTML = html;
-
             initPayment();
-
         })
         .catch(err => console.error("payment load fail:", err));
 });
@@ -577,7 +576,7 @@ function initPayment(){
         productChoice.classList.remove("show");
 
         productBtn.classList.remove("active", "ready");
-        productBtn.textContent = "결제유형을 선택해주세요";
+        // productBtn.textContent = "결제유형을 선택해주세요";
     }
 
     // 가격 선택
@@ -612,7 +611,7 @@ function initPayment(){
 
     });
 
-    // 결제 수단 선택
+        // 결제 수단 선택
     choiceBoxes.forEach(box => {
 
         box.addEventListener("click", () => {
@@ -625,8 +624,11 @@ function initPayment(){
             productBtn.classList.remove("ready");
             productBtn.classList.add("active");
 
-            productBtn.textContent =
-                `${Number(selectedPrice).toLocaleString()}원 결제하기`;
+            // match 타입은 share 블록 안 버튼 텍스트(가격)를 그대로 쓰므로 덮어쓰지 않음
+            if (!modal.classList.contains("match")) {
+                productBtn.textContent =
+                    `${Number(selectedPrice).toLocaleString()}원 결제하기`;
+            }
         });
 
     });
@@ -634,10 +636,10 @@ function initPayment(){
     // 결제 실행
     productBtn.addEventListener("click", () => {
 
-        if (!priceSelected) {
-            alert("결제유형을 선택해주세요!");
-            return;
-        }
+        // if (!priceSelected) {
+        //     alert("결제유형을 선택해주세요!");
+        //     return;
+        // }
 
         if (!productBtn.classList.contains("active")) {
             alert("결제수단을 선택해주세요!");
@@ -713,6 +715,22 @@ if (modal.classList.contains("type2")) {
     productBtn.classList.remove("active");
     productBtn.classList.add("ready");
     productBtn.textContent = "2,900원 결제하기";   // ← 여기만 변경
+}
+
+
+// ★ match (궁합 결과 페이지 전용 모달) 처리
+if (modal.classList.contains("match")) {
+    modalTitle.innerHTML = "궁합을 자세히 알아야<span>미래에 대처가<br>가능하다네</span>";
+    modal.querySelector(".price_choice").style.display = "";
+    productChoice.classList.add("show");
+    productBtn.classList.remove("active");
+    productBtn.classList.add("ready");
+    priceSelected = true;
+    // 가격은 현재 active 상태인 price_btn(target=1, 라이트 990/2900 등)에 맞춰 표시
+    const activeShareBtn = modal.querySelector('.js_product_btn');
+    if (activeShareBtn) {
+        // share 블록 안 버튼 텍스트를 그대로 쓰므로 별도 지정 불필요
+    }
 }
 
 
@@ -865,7 +883,7 @@ document.addEventListener("click", (e) => {
     const box = e.target.closest(".choice_type_box");
     if (!box) return;
 
-    const modal = document.querySelector("#paymentModal.type2");
+    const modal = document.getElementById("paymentModal");
     if (!modal) return;
 
     // 결제수단 전체에서 active 제거
@@ -879,3 +897,17 @@ document.addEventListener("click", (e) => {
     console.log("결제수단 active:", box.textContent.trim());
 });
 
+
+
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".price_btn");
+    if (!btn) return;
+
+    document.querySelectorAll('.price_btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const target = btn.dataset.target;
+    document.querySelectorAll('.js_share_box').forEach(box => {
+        box.classList.toggle('active', box.dataset.share === target);
+    });
+});
