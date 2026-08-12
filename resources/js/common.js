@@ -628,10 +628,7 @@ function initPayment(){
             scopedProductBtn.classList.remove("ready");
             scopedProductBtn.classList.add("active");
 
-            if (!modal.classList.contains("match")) {
-                scopedProductBtn.textContent =
-                    `${Number(selectedPrice).toLocaleString()}원 결제하기`;
-            }
+
         });
 
     });
