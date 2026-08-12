@@ -63,7 +63,7 @@ const mainMenuCon =`
                     <p>이용권</p>
                     <p><b>0</b>개</p>
                 </div>
-                <div class="mainMenu_mov_productBtn">
+                <div class="mainMenu_mov_productBtns[0]">
                     <a href="./product.html">
                         <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_ticketbox.webp" alt="">
                     </a>
@@ -537,8 +537,7 @@ function initPayment(){
     const priceBoxes = modal.querySelectorAll(".js_price_box");
     const choiceBoxes = modal.querySelectorAll(".js_product_choice_box");
 
-    const productBtn = modal.querySelector(".js_product_btn");
-    const policyCheck = modal.querySelector(".js_product_check");
+    const productBtns = modal.querySelectorAll(".js_product_btn");
     const productChoice = modal.querySelector(".product_choice");
     const modalTitle = modal.querySelector(".inner h1");
 
@@ -565,6 +564,7 @@ function initPayment(){
         if (review) review.style.display = "block";
     }
 
+
     function resetModal(){
 
         selectedPrice = null;
@@ -575,10 +575,9 @@ function initPayment(){
 
         productChoice.classList.remove("show");
 
-        productBtn.classList.remove("active", "ready");
-        // productBtn.textContent = "결제유형을 선택해주세요";
-    }
+        productBtns.forEach(btn => btn.classList.remove("active", "ready"));
 
+    }
     // 가격 선택
     priceBoxes.forEach(box => {
 
@@ -604,76 +603,109 @@ function initPayment(){
 
             choiceBoxes.forEach(el => el.classList.remove("active"));
 
-            productBtn.classList.remove("active");
-            productBtn.classList.add("ready");
-            productBtn.textContent = "결제수단을 선택해주세요";
+            productBtns[0].classList.remove("active");
+            productBtns[0].classList.add("ready");
+            productBtns[0].textContent = "결제수단을 선택해주세요";
         });
 
     });
 
-        // 결제 수단 선택
+    // 결제 수단 선택
     choiceBoxes.forEach(box => {
 
         box.addEventListener("click", () => {
 
             if (!priceSelected) return;
 
-            choiceBoxes.forEach(el => el.classList.remove("active"));
+            // 클릭한 버튼이 속한 탭(js_share_box) 안에서만 active 토글
+            const scopeBox = box.closest(".js_share_box") || modal;
+            const scopedChoiceBoxes = scopeBox.querySelectorAll(".js_product_choice_box");
+            const scopedProductBtn = scopeBox.querySelector(".js_product_btn") || productBtns[0];
+
+            scopedChoiceBoxes.forEach(el => el.classList.remove("active"));
             box.classList.add("active");
 
-            productBtn.classList.remove("ready");
-            productBtn.classList.add("active");
+            scopedProductBtn.classList.remove("ready");
+            scopedProductBtn.classList.add("active");
 
-            // match 타입은 share 블록 안 버튼 텍스트(가격)를 그대로 쓰므로 덮어쓰지 않음
             if (!modal.classList.contains("match")) {
-                productBtn.textContent =
+                scopedProductBtn.textContent =
                     `${Number(selectedPrice).toLocaleString()}원 결제하기`;
             }
         });
 
     });
 
-    // 결제 실행
-    productBtn.addEventListener("click", () => {
 
-        // if (!priceSelected) {
-        //     alert("결제유형을 선택해주세요!");
-        //     return;
-        // }
+// 결제 실행
+    productBtns.forEach(btn => {
 
-        if (!productBtn.classList.contains("active")) {
-            alert("결제수단을 선택해주세요!");
-            return;
-        }
+        const shareBox = btn.closest(".js_share_box");
+        const shareType = shareBox ? shareBox.dataset.share : null; // "1"=라이트 "2"=프리미엄 "3"=패키지
 
-        if (!policyCheck.checked) {
-            alert("이용 약관에 동의해주세요!");
-            return;
-        }
+        btn.addEventListener("click", () => {
 
-        const selectedPay =
-            modal.querySelector(".js_product_choice_box.active");
-
-        console.log("결제 실행:", {
-            price: selectedPrice,
-            method: selectedPay?.textContent
-        });
-        if (paymentType === "trial") {
-
-            document.querySelector(".js_result_explainList").style.display = "";
-            if (document.querySelector(".result_match_addsec2")) {
-                document.querySelector(".result_match_addsec2").style.display = "";
-            }     
-            document.querySelector(".js_kakaoUnlockBox").style.display = "none";
-
-            if (typeof animateMatchTable === "function") {
-                animateMatchTable();
+            if (!btn.classList.contains("active")) {
+                alert("결제수단을 선택해주세요!");
+                return;
             }
 
-            closeModal();
-        }
+            const scopedPolicyCheck = shareBox
+                ? shareBox.querySelector(".js_product_check")
+                : modal.querySelector(".js_product_check");
+
+            if (!scopedPolicyCheck || !scopedPolicyCheck.checked) {
+                alert("이용 약관에 동의해주세요!");
+                return;
+            }
+
+            const selectedPay = shareBox
+                ? shareBox.querySelector(".js_product_choice_box.active")
+                : modal.querySelector(".js_product_choice_box.active");
+
+            console.log("결제 실행:", {
+                share: shareType,
+                price: selectedPrice,
+                method: selectedPay?.textContent
+            });
+
+            if (paymentType === "trial") {
+                document.querySelector(".js_result_explainList").style.display = "";
+                if (document.querySelector(".result_match_addsec2")) {
+                    document.querySelector(".result_match_addsec2").style.display = "";
+                }
+                document.querySelector(".js_kakaoUnlockBox").style.display = "none";
+
+                if (typeof animateMatchTable === "function") {
+                    animateMatchTable();
+                }
+
+                closeModal();
+                return;
+            }
+
+            // ▼ 라이트(share="1") 결제 완료 시에만 카드 노출 ▼
+            if (shareType === "1") {
+                if (typeof unlockPremium === "function") {
+                    unlockPremium();
+                }
+                closeModal();
+                return;
+            }
+
+            // 프리미엄 / 패키지는 여기에 각자 다른 로직 추가
+            if (shareType === "2") {
+                // TODO: 프리미엄 결제 완료 로직
+            }
+            if (shareType === "3") {
+                // TODO: 패키지 결제 완료 로직
+            }
+
+        });
 
     });
+
+
 
     // 외부 오픈 트리거
     document.addEventListener("click", (e) => {
@@ -692,7 +724,7 @@ function initPayment(){
 
         if (paymentType === "trial") {
             modalTitle.textContent = "990원 결제하기";
-            productBtn.classList.add("js_kakaoUnlock_btn");
+            productBtns[0].classList.add("js_kakaoUnlock_btn");
 
             modal.querySelector(".price_choice").style.display = "none";
 
@@ -701,9 +733,9 @@ function initPayment(){
 
             productChoice.classList.add("show");
 
-            productBtn.classList.remove("active");
-            productBtn.classList.add("ready");
-            productBtn.textContent = "결제수단을 선택해주세요";
+            productBtns[0].classList.remove("active");
+            productBtns[0].classList.add("ready");
+            productBtns[0].textContent = "결제수단을 선택해주세요";
         }
 
     // ★ type2 (가격박스가 없는 고정가 모달) 처리
@@ -712,9 +744,9 @@ if (modal.classList.contains("type2")) {
     selectedPrice = 2900;
     priceSelected = true;
     productChoice.classList.add("show");
-    productBtn.classList.remove("active");
-    productBtn.classList.add("ready");
-    productBtn.textContent = "2,900원 결제하기";   // ← 여기만 변경
+    productBtns[0].classList.remove("active");
+    productBtns[0].classList.add("ready");
+    productBtns[0].textContent = "2,900원 결제하기";   // ← 여기만 변경
 }
 
 
@@ -723,8 +755,8 @@ if (modal.classList.contains("match")) {
     modalTitle.innerHTML = "궁합을 자세히 알아야<span>미래에 대처가<br>가능하다네</span>";
     modal.querySelector(".price_choice").style.display = "";
     productChoice.classList.add("show");
-    productBtn.classList.remove("active");
-    productBtn.classList.add("ready");
+    productBtns[0].classList.remove("active");
+    productBtns[0].classList.add("ready");
     priceSelected = true;
     // 가격은 현재 active 상태인 price_btn(target=1, 라이트 990/2900 등)에 맞춰 표시
     const activeShareBtn = modal.querySelector('.js_product_btn');
@@ -748,7 +780,7 @@ if (modal.classList.contains("match")) {
 
 document.addEventListener("DOMContentLoaded", () => {
  
-    // common.js는 productBtn에 붙인 js_kakaoUnlock_btn 클래스를
+    // common.js는 productBtns[0]에 붙인 js_kakaoUnlock_btn 클래스를
     // 모달을 닫을 때 제거하지 않아서(resetModal 미제거), 한 번이라도
     // 990원 체험판 모달을 열면 이후 정상 결제(25,900원 등)에서도
     // 클래스가 남아있게 됩니다. 그래서 클래스 대신, openPayment 클릭
@@ -761,13 +793,13 @@ document.addEventListener("DOMContentLoaded", () => {
         trackedPaymentType = openBtn.dataset.type || "normal";
     });
  
-    // common.js의 productBtn 클릭 리스너보다 나중에 실행되도록
+    // common.js의 productBtns[0] 클릭 리스너보다 나중에 실행되도록
     // 캡처링 단계가 아닌 버블링 단계에서, 그리고 즉시 실행이 아니라
     // 별도의 독립 리스너로 동일 클릭 이벤트를 한 번 더 관찰합니다.
     document.addEventListener("click", (e) => {
  
-        const productBtn = e.target.closest(".js_product_btn");
-        if (!productBtn) return;
+        const productBtns = e.target.closest(".js_product_btn");
+        if (!productBtns[0]) return;
  
         // 990원 체험판(trial) 케이스는 common.js의 unlock 로직이 담당하므로 제외
         if (trackedPaymentType === "trial") return;

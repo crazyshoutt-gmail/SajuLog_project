@@ -1,5 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
 
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2);
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2);
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2);
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2);
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2);
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BookendBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/TTBookendBatangR.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BookendBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/TTBookendBatangSB.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
 /* 오행별 글자색 */
 .saju_green { color: #00D623; }
 .saju_red { color: #FF3E71; }
@@ -1040,3 +1088,24 @@ background-clip: text;
 background: linear-gradient(transparent, #000000 80%); bottom: 0; left: 0; }
 
 .product_tit span { line-height: 130%; }
+
+
+/* 260812 */
+.result_explainCard { color: #fff }
+
+.crt_pointGradient { font-size: 1.5em; display: inline-block;
+    font-family: 'MaruBuri';
+    background: linear-gradient(0deg, #fff 10%, #caac7b 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent; }
+
+    .result_explainCard .result_explainCard_txt p { font-family: 'BookendBatang'; line-height: 150%; }
+
+
+    .main_preSajuBtn_btm { margin: 10% auto !important; }
+
+    .result_btm.premium_unlocked::after {
+    display: none !important;
+}

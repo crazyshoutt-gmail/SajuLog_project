@@ -38,36 +38,148 @@ const sajuResult = {
 
 const sajuExplains = [
     {
-        title: "타고난 성격",
-        content: "식신생재의 흐름이 좋아 자신의 재능과 기술로 부를 창출하는 구조입니다. 큰돈이 한 번에 들어오는 횡재수보다는 꾸준히 자산이 불어나는 형국이니 장기적인 저축과 투자가 유리합니다."
+        title: "차가운 샘물 위로 새순이 먼저 말을 걸고, 참아 온 마음은 밤에야 자기 자리를 찾는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "연애운",
-        content: "당신은 엄청난 잠재력을 가진 슈퍼카와 같지만, 때때로 엔진 제어가 되지 않아 멈춰 서기도 합니다. 화(火) 기운이 강해 추진력은 최고지만 냉철한 판단력이 보완될 때 비로소 목표를 향해 완주할 수 있습니다."
+        title: "말끝은 부드러우나 속도는 날카로워, 한 번 정한 기준은 쉽게 흐트러지지 않는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "재물운",
-        content: "주변에 사람은 많으나 정작 속마음을 터놓을 곳이 부족할 수 있습니다. 자존심이 강해 남에게 약한 소리를 못 하는 성격 때문일 수 있으니, 때로는 주변의 도움을 기꺼이 받아들이는 유연함이 필요합니다."
+        title: "가벼운 손놀림으로 배운 것을 엮어 내니, 사람들 앞에서 더 또렷해지는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "사업운",
-        content: "연애에 있어서는 매우 정열적이고 솔직한 스타일입니다. 다만 금방 달아오르고 금방 식을 수 있는 성향이 있으니, 서로의 가치관을 존중하며 천천히 신뢰를 쌓아가는 만남을 유지하는 것이 좋습니다."
+        title: "은근한 눈길과 단정한 태도에 마음이 머무르니, 가까이 갈수록 깊이가 드러나는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "건강운",
-        content: "초년의 고생이 밑거름이 되어 중장년으로 갈수록 운세가 크게 상승합니다. 현재의 정체기는 더 높은 곳으로 도약하기 위한 준비 기간이니 조급함을 버리고 전문성을 쌓는 데 집중하세요."
+        title: "들쭉날쭉한 지출 속에서도 손에 남는 감각은 살아 있으니, 돈은 묶는 법이 먼저이구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "결혼운",
-        content: "현재 거주지에서 서쪽이나 북쪽 방향으로 이동할 때 좋은 기운이 들어옵니다. 이사나 이직을 계획 중이라면 물이 가까운 지역이나 조용한 주택가보다는 활기찬 도심 지역이 본인의 에너지와 잘 맞습니다."
+        title: "약속과 책임을 가볍게 여기지 못하니, 맡은 자리를 지키는 힘이 오래 가는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "이성에게 비치는 매력",
-        content: "사주에 화(火) 기운이 강하므로 심혈관 질환이나 열로 인한 염증 수치에 주의해야 합니다. 충분한 수분 섭취와 함께 밤늦게까지 깨어있는 습관을 고치고 규칙적인 수면을 취하는 것이 개운의 핵심입니다."
+        title: "겉웃음 뒤에 선이 선명하니, 쉽게 다가오나 쉽게 잊히지 않는 인상이 남는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     },
     {
-        title: "직업의 적성",
-        content: "부족한 목(木) 기운을 보완하기 위해 일상에서 푸른색 아이템을 활용하거나 집안에 관엽식물을 배치하는 것을 추천합니다. 아침 시간에 숲길을 산책하는 습관은 흐트러진 운의 균형을 잡아주는 최고의 비방입니다."
+        title: "생각은 빠르고 손은 바쁘니, 길게 버티는 일은 차근차근 쌓아야 빛나는구나",
+        content: `
+님은 어릴 적부터 겉으로 넘기고 안에서 다시 살피는 버릇이 있었을 겁니다.
+말을 바로 세우기보다 먼저 참고, 혼자서 답을 다시 맞춰 보는 쪽에 가까웠습니다.
+지금도 사람 앞에서는 웃으며 받지만, 집에 오면 그날 대화를 여러 번 되짚습니다.
+그래서 지금 님은 바로 반응하기보다, <span class="crt_hei">다음 말을 더 정확하게 고르려 합니다.</span><br><br>
+
+지금까지 님은 빨리 대답한 뒤의 실수를 더 크게 느껴 왔을 가능성이 큽니다.
+서두르면 손해를 본다고 몸이 먼저 기억해서, 한 번 멈추고 보는 습관이 굳었습니다.
+말이 많은 자리보다 맥락이 또렷한 자리에서 마음이 놓이고 판단도 선명해집니다.
+그렇다면 앞으로는 <span class="crt_hei">상대 말의 속도보다 내용부터 먼저 잡아 보세요.</span><br><br>
+
+님은 감정에 휩쓸리는 사람이 아니라, 확인하고 움직이는 사람입니다.
+서운한 말을 들었을 때 바로 맞받아치지 말고, 적어 두었다가 다시 말해 보세요.
+<span class="crt_hei">급한 대답보다 다시 확인하는 습관을 살리세요</span><br><br>
+`
     }
 ];
 
@@ -261,7 +373,15 @@ function unlockAll() {
     if (titPer) titPer.style.setProperty('display', 'block', 'important');
     if (explainTitle) explainTitle.style.setProperty('display', 'flex', 'important');
     if (resultBtm) resultBtm.style.setProperty('display', 'block', 'important');
+}
 
+// ▼▼ 추가: 라이트 결제 완료 시 호출 ▼▼
+function unlockPremium() {
+    const btmCta = document.querySelector('.js_result_btm_cta');
+    const btmBlur = document.querySelector('.js_result_btm_blur');
+
+    if (btmCta) btmCta.style.setProperty('display', 'none', 'important');
+    if (btmBlur) btmBlur.style.setProperty('display', 'none', 'important');
 }
 
 
@@ -653,3 +773,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, INTERVAL);
 });
+
+
+
+
+
+// 260812
+
+
+// ▼ 추가: .js_result_btm 전용 아코디언 렌더링 (기존 renderExplains와 별개)
+function renderExplainsBtm() {
+    const container = document.querySelector('.js_result_btm_explainList');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    sajuExplains.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'result_explainCard';
+        card.innerHTML = `
+            <div class="result_explainCard_titleBox" onclick="toggleExplainBtm(${index}, this)">
+                <p class="result_explainCard_title crt_pointGradient">${item.title}</p>
+                <div class="result_explain_toggleBtn">
+                    <div></div>
+                    <div class="result_explain_toggleBtn2"></div>
+                </div>
+            </div>
+            <div class="result_explainCard_txt">
+                <p>${item.content}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// ▼ 추가: btm 영역 전용 아코디언 토글 (기존 toggleExplain과 충돌 방지)
+function toggleExplainBtm(index, element) {
+    const parent = element.parentElement;
+    document.querySelectorAll('.js_result_btm_explainList .result_explainCard').forEach(card => {
+        if (card !== parent) card.classList.remove('on');
+    });
+    parent.classList.toggle('on');
+}
+
+function unlockPremium() {
+    const btmCta = document.querySelector('.js_result_btm_cta');
+    const btmBlur = document.querySelector('.js_result_btm_blur');
+    const btmExplainList = document.querySelector('.js_result_btm_explainList');
+    const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
+
+    // 기존 "들여다보기" CTA 제거
+    if (btmCta) {
+        btmCta.style.setProperty('display', 'none', 'important');
+    }
+
+    // 블러 제거
+    if (btmBlur) {
+        btmBlur.style.setProperty('display', 'none', 'important');
+    }
+
+    // 라이트 해설 노출
+    if (btmExplainList) {
+        btmExplainList.style.setProperty('display', 'block', 'important');
+        renderExplainsBtm();
+    }
+
+    // "프리미엄도 보러가기" 노출
+    if (premiumBtn) {
+        premiumBtn.style.setProperty('display', 'block', 'important');
+    }
+
+
+    const resultBtm = document.querySelector('.result_btm');
+if (resultBtm) resultBtm.classList.add('premium_unlocked');
+}

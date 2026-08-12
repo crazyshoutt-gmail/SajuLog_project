@@ -226,10 +226,15 @@
             <h2>”그보다 자네 더 큰 문제가 있는데,<br>한번 들여다보겠나?”</h2>
         </div>
         <img src="resources/img/result/result_btm.webp" alt="">
-        <div class="main_sec3_preSajuBtn"><a href="./register_prem.html" class="openPayment">들여다보기</a></div>
-        <img src="resources/img/result/blur.webp" alt="" style="margin-top: -17%; width: 100%; z-index: 0;">
+        <div class="main_sec3_preSajuBtn js_result_btm_cta"><a href="./register_prem.html" class="openPayment">들여다보기</a></div>
+        <img src="resources/img/result/blur.webp" alt="" class="js_result_btm_blur" style="margin-top: -17%; width: 100%; z-index: 0;">
+
+        <div class="result_explainList js_result_btm_explainList" style="display:none;"></div>
+
+        <div class="main_sec3_preSajuBtn main_preSajuBtn_btm" style="display: none;"><a href="./register_prem.html" class="openPayment">프리미엄도 보러가기</a></div>
 
     </section>
+
 
 
 
@@ -620,7 +625,7 @@
 
     <footer></footer>
 
-    <section class="result_loadBox">
+    <!-- <section class="result_loadBox">
         <div class="result_bgMovie">
             <video class="main_bg" id="mainBgVideo" autoplay muted loop playsinline preload="auto" poster="resources/img/main-img/main_thum.webp">
                 <source src="resources/img/result/freeResult_wMov_2.webm" type="video/webm">
@@ -644,11 +649,13 @@
                 <p>사주 분석 중 ...</p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
 
     <script src="resources/js/result.js"></script>
     <script src="./resources/js/common.js"></script>
+    <script src="resources/js/result_type2.js"></script>
+    
 </body>
 </html>
