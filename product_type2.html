@@ -146,26 +146,26 @@
        <script src="./resources/js/result_match.js"></script>
 
 
-<script>
-(function() {
-    var priceBtns = document.querySelectorAll('.price_btn');
-    priceBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();   // 추가
+        <script>
+        (function() {
+            var priceBtns = document.querySelectorAll('.price_btn');
+            priceBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();   // 추가
 
-            document.querySelectorAll('.price_btn').forEach(function(b) {
-                b.classList.remove('active');
-            });
-            btn.classList.add('active');
+                    document.querySelectorAll('.price_btn').forEach(function(b) {
+                        b.classList.remove('active');
+                    });
+                    btn.classList.add('active');
 
-            var target = btn.dataset.target;
-            document.querySelectorAll('.js_share_box').forEach(function(box) {
-                box.classList.toggle('active', box.dataset.share === target);
+                    var target = btn.dataset.target;
+                    document.querySelectorAll('.js_share_box').forEach(function(box) {
+                        box.classList.toggle('active', box.dataset.share === target);
+                    });
+                });
             });
-        });
-    });
-})();
-</script>
+        })();
+        </script>
     </body>
 
 

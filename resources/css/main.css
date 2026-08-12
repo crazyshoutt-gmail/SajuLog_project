@@ -14,7 +14,7 @@ section{background-color: #00001d;}
 }
 
 .main_titBox>p{ color: #C0C0D3; text-shadow: 2px 2px 6px #00000038;
-    font-size: 1.4em; font-weight: 200; margin-bottom: 3%; position: relative;
+    font-size: 1.6em; font-weight: 200; margin-bottom: 3%; position: relative;
 }
 .main_titBox>p>span{display: inline-block;}
 
@@ -42,7 +42,7 @@ font-size: 1.05em;
 .main_conTxt>p:nth-child(2){opacity: 0.8; text-shadow: 2px 2px 6px #000000; }
 .main_sajuBtn_box{position: relative;
     text-align: center; color: white;
-    margin: auto; font-size: 1.7em; padding-bottom: 5%;
+    margin: auto; font-size: 1.7em; padding-bottom: 10%;
 }
 .main_sajuBtn_box_gradient_text {
     background: linear-gradient(46deg, 
@@ -62,12 +62,12 @@ font-size: 1.05em;
 }
 
 .main_sajuBtn_box p{
-    font-size: 1.2em; margin-bottom: 0.8em;
+    font-size: 1.1em; margin-bottom: 0.8em;
 }
 /* .main_sajuBtn_box span{color: #ddc49b;}g */
-.main_sajuBtn_box a{
+.main_sajuBtn_box a{ width: fit-content; margin: auto;
     color: white; font-size: 1.5em; font-family: 'YeogiOttaeJalnanGothic';
-    margin-top: 3%; display: inline-block; padding: 0.2em 0.7em; padding-top: 0.4em;
+    margin-top: 3%; display: block; padding: 0.2em 0.7em; padding-top: 0.4em;
     border-radius: 0.5em; border: 1px solid white; background-color: rgba(255, 255, 255, 0.089);
 }
 
@@ -157,3 +157,8 @@ font-size: 1.05em;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
 .main_titBox>p, .main_titBox>span, .main_subConTxt { font-family: 'Noto Serif KR', serif; letter-spacing: -0.05em; }
+
+
+/* 260812 */
+.main_sajuBtn_box h1 { font-size: 1.5em; }
+.main_sajuBtn_box:last-child a { padding: 0.2em 1.2em; }
