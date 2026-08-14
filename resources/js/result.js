@@ -358,14 +358,6 @@ function unlockAll() {
     if (resultBtm) resultBtm.style.setProperty('display', 'block', 'important');
 }
 
-// ▼▼ 추가: 라이트 결제 완료 시 호출 ▼▼
-function unlockPremium() {
-    const btmCta = document.querySelector('.js_result_btm_cta');
-    const btmBlur = document.querySelector('.js_result_btm_blur');
-
-    if (btmCta) btmCta.style.setProperty('display', 'none', 'important');
-    if (btmBlur) btmBlur.style.setProperty('display', 'none', 'important');
-}
 
 
 
@@ -800,7 +792,7 @@ function toggleExplainBtm(index, element) {
 
 function unlockPremium() {
     const btmCta = document.querySelector('.js_result_btm_cta');
-    const btmBlur = document.querySelector('.js_result_btm_blur');
+    const btmBlur = document.querySelector('.result_btm_previewExplainList');
     const btmExplainList = document.querySelector('.js_result_btm_explainList');
     const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
 

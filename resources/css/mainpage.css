@@ -482,7 +482,7 @@ footer .inner ul li { cursor: pointer; }
 }
 
 .main_sec3_preSajuBtn{ position: relative; z-index: 10;
-    width: 85%; margin: -15% auto 10%; text-align: center;font-family: 'YeogiOttaeJalnanGothic';
+    width: 85%; margin: -15% auto 5%; text-align: center;font-family: 'YeogiOttaeJalnanGothic';
     padding: 0.4em 0; font-size: 2.5em; color: #000; background: linear-gradient(130deg, #C9A869, #F4E9A3, #EAD7A9, #C9A869); 
     border-radius: 0.2em; border: 1px solid #F4E9A3; font-weight: 900; display: flex; justify-content: center; align-items: center;
 }
