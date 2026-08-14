@@ -9,7 +9,7 @@ const headerContent = `
             <div class="header_cashBtn" style=" pointer-events: none; opacity: 0;">
                 <a href="./product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
-            <div class="header_bgmBtn" data-state="off">
+            <div class="header_bgmBtn" data-state="off" style="display: none;">
                 <span class="header_bgmBtn_icon">&#9835;</span><span class="header_bgmBtnTXT">OFF</span>
             </div>
             <div class="header_barBtn js_header_barBtn">

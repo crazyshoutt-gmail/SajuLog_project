@@ -290,23 +290,6 @@ function renderExplains() {
 
     container.innerHTML = '';
 
-    // sajuExplains.forEach((item, index) => {
-    //     const card = document.createElement('div');
-    //     card.className = 'result_explainCard';
-    //     card.innerHTML = `
-    //         <div class="result_explainCard_titleBox" onclick="toggleExplain(${index}, this)">
-    //             <p class="result_explainCard_title">${item.title}</p>
-    //             <div class="result_explain_toggleBtn">
-    //                 <div></div>
-    //                 <div class="result_explain_toggleBtn2"></div>
-    //             </div>
-    //         </div>
-    //         <div class="result_explainCard_txt">
-    //             <p>${item.content}</p>
-    //         </div>
-    //     `;
-    //     container.appendChild(card);
-    // });
     const card = document.createElement('div');
     card.className = 'result_explainTxtBox';
     card.innerHTML = `
@@ -795,8 +778,7 @@ function renderExplainsBtm() {
             <div class="result_explainCard_titleBox" onclick="toggleExplainBtm(${index}, this)">
                 <p class="result_explainCard_title crt_pointGradient">${item.title}</p>
                 <div class="result_explain_toggleBtn">
-                    <div></div>
-                    <div class="result_explain_toggleBtn2"></div>
+                    <img src="resources/img/ui/tab.png" alt="">
                 </div>
             </div>
             <div class="result_explainCard_txt">
@@ -847,3 +829,40 @@ function unlockPremium() {
     const resultBtm = document.querySelector('.result_btm');
 if (resultBtm) resultBtm.classList.add('premium_unlocked');
 }
+
+
+
+// 260814
+
+document.addEventListener('DOMContentLoaded', function () {
+    const previewList = document.querySelector('.result_btm_previewExplainList');
+    if (!previewList) return;
+ 
+    previewList.innerHTML = '';
+ 
+    sajuExplains.forEach(function (item, index) {
+        const card = document.createElement('div');
+        card.className = 'result_btm_previewExplainCard';
+        card.innerHTML = `
+            <div class="result_btm_previewExplainTitle" onclick="togglePreviewExplain(this)">
+                <p>${item.title}</p>
+                <div class="result_explain_toggleBtn">
+                    <img src="resources/img/ui/tab.png" alt="">
+                </div>
+            </div>
+            <div class="result_btm_previewExplainContent">
+                <img src="resources/img/result/explain_sample.webp" alt="">
+            </div>
+        `;
+        previewList.appendChild(card);
+    });
+});
+ 
+function togglePreviewExplain(element) {
+    const card = element.parentElement;
+    document.querySelectorAll('.result_btm_previewExplainCard').forEach(function (item) {
+        if (item !== card) item.classList.remove('on');
+    });
+    card.classList.toggle('on');
+}
+ 

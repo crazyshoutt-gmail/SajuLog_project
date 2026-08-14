@@ -164,15 +164,19 @@
     </section>
 
 
-    <section class="result_sec3" >
-        <div class="js_result_titPer" style="display:none;"><img src="resources/img/result/result_tit_per.webp" alt=""></div>
-        <div class="result_explainTitle js_result_explainTitle" style="display:none;">
+    <section class="per_wrap">
+        <div class="js_result_titPer" ><img src="resources/img/result/result_tit_per.webp" alt=""></div>
+        <div class="result_explainTitle js_result_explainTitle">
             <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_subtitleFrame.webp" alt="">
             <div class="result_tit">
-                <h3>오호.. 자네.. 특이한 사주를 가졌군</h3>
-                <h2>핵심만 말해주겠네</h2>
+                <h3>자네 답답해서 혼자 해나가는 성격이구먼<br>그런데, 그러다가 자네가 먼저 포기하겠어...</h3>
+                <h2>이렇게 해결해보는건 어떻겠나?</h2>
             </div>
         </div>
+    </section>
+
+    <section class="result_sec3" >
+
 
         <!-- 맛보기 요약 섹션 -->
         <!-- <div class="result_summaryBox">
@@ -186,22 +190,15 @@
             <div class="result_kakaoUnlock_inner">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lock.webp" alt="">
                 <p class="result_kakaoUnlock_title">나머지 해설이 잠겨있어요</p>
-                <p class="result_kakaoUnlock_desc">카카오채널 친구추가 후<br>사주 해설 전체를 <b style=" color: #fa2500; display:inline-block; padding-right:0.1em; font-weight:700;">무료</b>로 확인하세요</p>
                 <!-- 카카오채널 URL을 href="" 안에 입력 -->
                 <!-- <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">
                     <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/kakao_icon.webp" alt="" onerror="this.style.display='none'">
                     카카오채널 친구추가 후 전체보기
                 </a> -->
-                <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">
-                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/kakao_icon.webp" alt="" onerror="this.style.display='none'">
-                    <span class="result_kakaoUnlockBoxTT">
-                        <!-- <span>카카오채널 친구추가 후 </span>
-                        <div>
-                            <span>무료로 보기</span>
-                        </div> -->
-                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/kakao_txtBtn_3.webp" alt="">
-                    </span>
-                </a>
+                <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">내 사주해설 무료로 열기</a>
+
+                <p class="result_kakaoUnlock_desc"><span>*카카오채널 추가 후</span>  바로 확인해보세요</p>
+
                 <!-- 개발자가 친추 확인 후 unlock 처리할 버튼 (필요시 사용) -->
                 <!-- <button class="result_kakaoUnlock_confirm js_kakaoUnlock_confirm">친구추가 완료했어요</button> -->
             </div>
@@ -227,7 +224,9 @@
         </div>
         <img src="resources/img/result/result_btm.webp" alt="">
         <div class="main_sec3_preSajuBtn js_result_btm_cta"><a href="./register_prem.html" class="openPayment">들여다보기</a></div>
-        <img src="resources/img/result/blur.webp" alt="" class="js_result_btm_blur" style="margin-top: -17%; width: 100%; z-index: 0;">
+        
+        <div class="result_btm_previewExplainList"></div>
+
 
         <div class="result_explainList js_result_btm_explainList" style="display:none;"></div>
 
@@ -625,7 +624,7 @@
 
     <footer></footer>
 
-   <section class="result_loadBox">
+   <!-- <section class="result_loadBox">
         <div class="result_bgMovie">
             <video class="main_bg" id="mainBgVideo" autoplay muted loop playsinline preload="auto" poster="resources/img/main-img/main_thum.webp">
                 <source src="resources/img/result/freeResult_wMov_2.webm" type="video/webm">
@@ -649,13 +648,13 @@
                 <p>사주 분석 중 ...</p>
             </div>
         </div>
-    </section> 
+    </section>  -->
 
     <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
 
     <script src="resources/js/result.js"></script>
     <script src="./resources/js/common.js"></script>
-    <script src="resources/js/result_type2.js"></script>
+    <!-- <script src="resources/js/result_type2.js"></script> -->
     
 </body>
 </html>
