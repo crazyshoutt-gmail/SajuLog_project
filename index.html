@@ -16,6 +16,7 @@
 </head>
 <body>
     <header class="index_head"></header>
+
     <div id="paymentContainer"></div>
     
         <audio class="header_bgm" id="bgmAudio" loop preload="auto">
@@ -39,200 +40,42 @@
         </div>
         <div class="main_contentBox">
             <div class="main_logoBox">
-                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/main-img/main_logoBox.webp" alt="">
+                <!-- <img src="https://land.withusmk.co.kr/assets/saju/resources/img/main-img/main_logoBox.webp" alt=""> -->
                 <div class="main_conTxt">
                     <p class="main_logo_kr">사주로그</p>
                     <p class="main_logo_en">SAJU LOG</p>
                 </div>
             </div>
 
+            <div class="main_product bg">
+                <img src="resources/img/main-img/main_product.webp" alt="">
+                <div class="bg_inner">
 
-            <div class="main_sajuBtn_box">
-                <p>전통 사주 명리학의 해설 기준을 바탕으로<br>나만의 사주를 깊이 있게 분석합니다</p>
+                    <div class="main_product_tit">
+                        <p><span>전통 사주 명리학</span>의 해설 기준을 바탕으로<br>나만의 사주를 깊이 있게 분석합니다</p>
 
-                <div class="btm_wrap">
-                    <div class="saju_frameBox">
-                        <!-- 상단 선 -->
-                        <div class="saju_frameBox_line-top"></div>
-                        <!-- 하단 선 -->
-                        <div class="saju_frameBox_line-bottom"></div>
-                        <!-- 왼쪽 선 -->
-                        <div class="saju_frameBox_line-left"></div>
-                        <!-- 오른쪽 선 -->
-                        <div class="saju_frameBox_line-right"></div>
-                        <!-- 모서리 장식 (고정 크기 SVG, 원본 그대로) -->
-                        <!-- 왼쪽 상단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-tl">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 오른쪽 상단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-tr">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 왼쪽 하단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-bl">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 오른쪽 하단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-br">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 콘텐츠 영역 -->
-                        <div class="saju_frameBox_frame-content">
-                            <h1>정밀 사주 무료 체험</h1>
-                            <a href="./register_newUser.html"><span class="main_sajuBtn_box_gradient_text">내 사주 무료로</span> 확인하기</a>
+                        <div class="pd_box">
+                            <img src="resources/img/main-img/pd01.webp" alt="">
+                            <img src="resources/img/main-img/pd02.webp" alt="">
+                            <img src="resources/img/main-img/pd03.webp" alt="">
+                            <img src="resources/img/main-img/pd04.webp" alt="">
+                            <img src="resources/img/main-img/pd05.webp" alt="">
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="main_sajuBtn_box">
-                <div class="btm_wrap">
-                    <div class="saju_frameBox">
-                        <!-- 상단 선 -->
-                        <div class="saju_frameBox_line-top"></div>
-                        <!-- 하단 선 -->
-                        <div class="saju_frameBox_line-bottom"></div>
-                        <!-- 왼쪽 선 -->
-                        <div class="saju_frameBox_line-left"></div>
-                        <!-- 오른쪽 선 -->
-                        <div class="saju_frameBox_line-right"></div>
-                        <!-- 모서리 장식 (고정 크기 SVG, 원본 그대로) -->
-                        <!-- 왼쪽 상단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-tl">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 오른쪽 상단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-tr">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 왼쪽 하단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-bl">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 오른쪽 하단 -->
-                        <div class="saju_frameBox_corner saju_frameBox_corner-br">
-                            <svg width="96.61" height="96.61" viewBox="0 0 96.61 96.61" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#ddc49b">
-                                    <path d="M15.57,15.57H0V0h15.57v15.57ZM2.06,13.51h11.45V2.06H2.06v11.45Z"/>
-                                    <path d="M29.07,29.07h-15.57v-15.57h15.57v15.57ZM15.57,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M56.26,29.07h-15.57v-15.57h15.57v15.57ZM42.75,27.01h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,42.58h-15.57v-15.57h15.57v15.57ZM29.07,40.52h11.45v-11.45h-11.45v11.45Z"/>
-                                    <path d="M42.58,15.57h-15.57V0h15.57v15.57ZM29.07,13.51h11.45V2.06h-11.45v11.45Z"/>
-                                    <path d="M15.57,42.58H0v-15.57h15.57v15.57ZM2.06,40.52h11.45v-11.45H2.06v11.45Z"/>
-                                    <path d="M29.07,56.09h-15.57v-15.57h15.57v15.57ZM15.57,54.03h11.45v-11.45h-11.45v11.45Z"/>
-                                    <rect x="0"     y="41.55" width="2.06"  height="52.82"/>
-                                    <rect x="13.51" y="55.06" width="2.06"  height="39.31"/>
-                                    <rect x="55.23" y="13.51" width="39.31" height="2.06"/>
-                                    <rect x="41.55" y="0"     width="55.06" height="2.06"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <!-- 콘텐츠 영역 -->
-                        <div class="saju_frameBox_frame-content">
-                            <h1>우리 둘, 얼마나 잘 맞을까?</h1>
-                            <a href="./register_match.html"><span class="main_sajuBtn_box_gradient_text">궁합 무료로</span> 확인하기</a>
-                        </div>
+                    <div class="main_sajuBtn_box">
+                        <h1>난 어떤 운명을 타고났을까?</h1>
+                        <img src="resources/img/main-img/saju.webp" alt="">
+                        <a href="./register_newUser.html"><span class="main_sajuBtn_box_gradient_text">내 사주 무료로</span> 확인하기</a>
+                    </div>
+    
+                    <div class="main_sajuBtn_box">
+                        <h1>우리 둘, 얼마나 잘 맞을까?</h1>
+                        <img src="resources/img/main-img/match.webp" alt="">
+                        <a href="./register_match.html"><span class="main_sajuBtn_box_gradient_text">궁합 무료로</span> 확인하기</a>
                     </div>
                 </div>
+
             </div>
 
         </div>
