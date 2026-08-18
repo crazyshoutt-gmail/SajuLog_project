@@ -1121,3 +1121,104 @@ height: 2em; }
 
 
 .result_explainCard.on .result_explain_toggleBtn img, .result_btm_previewExplainCard.on .result_explain_toggleBtn img  { transform: rotate(90deg); }
+
+
+
+/* 260818 result_slider */
+.result_reviewSlide_box{
+    width: 100%; position: relative; box-sizing: border-box;container-type: inline-size
+}
+.result_reviewSlide{
+    position: absolute; 
+    bottom: 13%; left: 50%; transform: translateX(-50%);
+    width: 95%; max-width: 750px;
+    height: 13.5lh;
+    border: 1px solid #b8935a;
+    border-radius: 1lh; overflow: hidden;
+    background:
+        radial-gradient(ellipse at 70% 30%, rgba(0, 0, 0, 0.35), transparent 60%),
+        linear-gradient(160deg, #14131f9a 0%, #0c0b139a 60%, #100e1a9a 100%);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* 위/아래 가장자리 자연스럽게 페이드 (선택 사항) */
+.result_reviewSlide::before,
+.result_reviewSlide::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 1.5lh;
+    z-index: 2;
+    pointer-events: none;
+}
+.result_reviewSlide::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(12,11,19,0.9), transparent);
+}
+.result_reviewSlidee::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(12,11,19,0.9), transparent);
+}
+ 
+.result_reviewSwiper {
+    width: 100%;
+    height: 100%;
+    padding: 2.5%;
+}
+ 
+  /* ====== 카드(슬라이드) 한 장 ====== */
+.swiper-slide.review-card {
+    position: relative;
+    height: auto;
+    min-height: 0px;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 1lh;
+    margin-bottom: 1lh;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.swiper-slide.review-card:last-child {
+    border-bottom: none;
+}
+ 
+  .review-left {
+    width: 23%; padding-left: 2.5%;
+  }
+  .review-meta {
+    font-size: 2cqw;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1%;
+  }
+  .review-name {
+    font-size: 5cqw;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.1lh;
+  }
+  .review-stars {
+    color: #f2c14e;
+    font-size: 3cqw;
+    letter-spacing: 2px;
+  }
+ 
+  .review-right {
+    width: 77%; word-break: keep-all; padding-right: 2.5%;
+  }
+  .review-text {
+    font-size: 3cqw;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.78);
+  }
+ 
+  /* 우측 장식 아이콘(선택, 데이터에 icon 있을 때만 표시) */
+  .review-icon {
+    position: absolute;
+    opacity: 0.35;
+    width: 20%; bottom: 0;right: 0; overflow: hidden;
+  }
+  .review-icon img {
+    width: 100%;
+    display: block;
+    transform: translateX(10%) translateY(30%);
+  }

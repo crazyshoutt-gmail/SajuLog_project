@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
     <title>사주결과페이지</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header></header>
@@ -222,8 +228,18 @@
             <div></div>
             <h2>”그보다 자네 더 큰 문제가 있는데,<br>한번 들여다보겠나?”</h2>
         </div>
+        <div class="result_reviewSlide_box">
         <img src="resources/img/result/result_btm.webp" alt="">
-        <div class="main_sec3_preSajuBtn js_result_btm_cta"><a href="./register_prem.html" class="openPayment">들여다보기</a></div>
+        <!-- 리뷰용 슬라이드 추가 -->
+        <div class="result_reviewSlide">
+            <div class="swiper result_reviewSwiper">
+                <div class="swiper-wrapper" id="result_reviewWrapper">
+                    <!-- 카드들은 전부 JS에서 주입됩니다. -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="main_sec3_preSajuBtn js_result_btm_cta"><a href="./register_prem.html" class="openPayment">8가지 정밀 사주해설 보기</a></div>
         
         <div class="result_btm_previewExplainList"></div>
 
