@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// 결제모달 - 배주한 작성 260604 > 260605 수정
+// 결제모달 - 배주한 작성 260604 > 260605 수정  >260819 수정
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -515,13 +515,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const paymentSrc = container.dataset.paymentSrc || "./product_type2.html";
 
-    fetch(paymentSrc)
-        .then(res => res.text())
-        .then(html => {
-            container.innerHTML = html;
+    // fetch(paymentSrc)
+    //     .then(res => res.text())
+    //     .then(html => {
+    //         container.innerHTML = html;
+    //         initPayment();
+    //     })
+    //     .catch(err => console.error("payment load fail:", err));
+
+    fetch(paymentSrc, { cache: "no-store" })
+    .then(res => res.text())
+    .then(html => {
+        container.innerHTML = html;
+
+        const modal = container.querySelector("#paymentModal");
+
+        if (modal?.classList.contains("type3")) {
+            initType3Payment(modal);
+        } else {
             initPayment();
-        })
-        .catch(err => console.error("payment load fail:", err));
+        }
+    })
+    .catch(err => {
+        console.error("payment load fail:", err);
+    });
+
 });
 
 
@@ -529,6 +547,7 @@ function initPayment(){
 
     const modal = document.getElementById("paymentModal");
     if (!modal) return;
+    
 
     // DOM
     const closeBtn = modal.querySelector(".close_btn");
@@ -713,6 +732,12 @@ function initPayment(){
         e.preventDefault();
 
         paymentType = openBtn.dataset.type || "normal";
+
+        if (modal.classList.contains("type3")) {
+            openModal();
+            return;
+        } 
+
         modalTitle.textContent = "결제하기";
 
         // 기본 UI
@@ -950,33 +975,325 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 260819
 
-document.addEventListener("click", (e) => {
-    const box = e.target.closest(".js_product_choice_box");
-    if (!box) return;
+// document.addEventListener("click", (e) => {
+//     const box = e.target.closest(".js_product_choice_box");
+//     if (!box) return;
 
-    const modal = box.closest("#paymentModal");
-    if (!modal) return;
+//     const modal = box.closest("#paymentModal");
+//     if (!modal) return;
 
-    // type3 모달에서만 사용
-    if (!modal.classList.contains("type3")) return;
+//     // type3 모달에서만 사용
+//     if (!modal.classList.contains("type3")) return;
 
-    // 결제수단 active 초기화
-    modal.querySelectorAll(".js_product_choice_box").forEach(item => {
-        item.classList.remove("active");
-    });
+//     // 결제수단 active 초기화
+//     modal.querySelectorAll(".js_product_choice_box").forEach(item => {
+//         item.classList.remove("active");
+//     });
 
-    // 선택한 결제수단 활성화
-    box.classList.add("active");
+//     // 선택한 결제수단 활성화
+//     box.classList.add("active");
 
-    // 결제 버튼 활성화
-    const paymentBtn = modal.querySelector(".js_product_btn");
+//     // 결제 버튼 활성화
+//     const paymentBtn = modal.querySelector(".js_product_btn");
 
-    if (paymentBtn) {
-        paymentBtn.classList.remove("ready");
-        paymentBtn.classList.add("active");
+//     if (paymentBtn) {
+//         paymentBtn.classList.remove("ready");
+//         paymentBtn.classList.add("active");
+//     }
+
+//     console.log("결제수단 선택:", box.textContent.trim());
+// });
+
+function initType3Payment(modal) {
+
+    const closeBtn = modal.querySelector(".close_btn");
+    const dim = modal.querySelector(".payment_dim");
+
+    const productCards = modal.querySelectorAll(".produc_choice_card");
+    const explainCards = modal.querySelectorAll(".js_proudct_choice_explainCard");
+
+    const paymentOption = modal.querySelector(".product_choice_option");
+    const choiceBoxes = modal.querySelectorAll(".js_product_choice_box");
+
+    const requiredPolicy = modal.querySelector(".js_product_check[required]");
+    const productBtn = modal.querySelector(".js_product_btn");
+
+
+    let selectedProduct = null;
+    let selectedPrice = null;
+    let selectedPayment = null;
+
+
+    // =============================
+    // 모달 열기
+    // =============================
+
+    function openModal() {
+        modal.classList.add("active");
+        document.body.classList.add("modal_open");
     }
 
-    console.log("결제수단 선택:", box.textContent.trim());
-});
+
+    // =============================
+    // 모달 닫기
+    // =============================
+
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal_open");
+    }
 
 
+    // =============================
+    // 외부 CTA
+    // =============================
+
+    document.addEventListener("click", (e) => {
+
+        const openBtn = e.target.closest(".openPayment");
+        if (!openBtn) return;
+
+        e.preventDefault();
+
+        openModal();
+    });
+
+
+    closeBtn?.addEventListener("click", closeModal);
+    dim?.addEventListener("click", closeModal);
+
+
+    // =============================
+    // 상품 선택
+    // =============================
+
+    productCards.forEach(card => {
+
+        card.addEventListener("click", () => {
+
+            productCards.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            card.classList.add("active");
+
+
+            selectedProduct = card.dataset.target;
+
+            const priceText =
+                card.querySelector(".produc_choice_card_R h2")
+                    ?.textContent.trim() || "0원";
+
+            selectedPrice = Number(
+                priceText.replace(/[^\d]/g, "")
+            );
+
+
+            // 상품별 상세
+            explainCards.forEach(box => {
+                box.classList.toggle(
+                    "active",
+                    box.dataset.share === selectedProduct
+                );
+            });
+
+
+            // 결제수단 영역 표시
+            paymentOption?.classList.add("active");
+
+
+            // 상품 바꾸면 결제수단 초기화
+            selectedPayment = null;
+
+            choiceBoxes.forEach(box => {
+                box.classList.remove("active");
+            });
+
+
+            // 버튼 대기상태
+            if (productBtn) {
+                productBtn.classList.remove("active");
+                productBtn.classList.add("ready");
+                productBtn.textContent = "결제수단을 선택해주세요";
+            }
+
+
+            console.log("상품 선택:", {
+                product: selectedProduct,
+                price: selectedPrice
+            });
+        });
+
+    });
+
+
+    // =============================
+    // 결제수단 선택
+    // =============================
+
+    choiceBoxes.forEach(box => {
+
+        box.addEventListener("click", () => {
+
+            if (!selectedProduct) {
+                alert("상품을 먼저 선택해주세요.");
+                return;
+            }
+
+
+            choiceBoxes.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            box.classList.add("active");
+
+
+            selectedPayment = box.textContent.trim();
+
+
+            if (productBtn) {
+
+                productBtn.classList.remove("ready");
+                productBtn.classList.add("active");
+
+                productBtn.textContent =
+                    `${selectedPrice.toLocaleString()}원 결제하기`;
+            }
+
+
+            console.log("결제수단 선택:", selectedPayment);
+        });
+
+    });
+
+
+    // =============================
+    // 결제
+    // =============================
+
+    productBtn?.addEventListener("click", () => {
+
+        if (!selectedProduct) {
+            alert("상품을 선택해주세요.");
+            return;
+        }
+
+        if (!selectedPayment) {
+            alert("결제수단을 선택해주세요.");
+            return;
+        }
+
+        if (!requiredPolicy?.checked) {
+            alert("이용 약관에 동의해주세요.");
+            return;
+        }
+
+
+        const productTypeMap = {
+            "1": "traditional",
+            "2": "future",
+            "3": "package"
+        };
+
+        const productType = productTypeMap[selectedProduct];
+
+        if (productType) {
+            saveSajuPurchase(productType);
+        }
+
+        if (typeof applySajuPurchaseState === "function") {
+            applySajuPurchaseState();
+        }
+        closeModal();
+
+        console.log("TYPE3 결제 실행", {
+            product: selectedProduct,
+            price: selectedPrice,
+            method: selectedPayment
+        });
+
+
+        /*
+            product 1 = 정통사주
+            product 2 = 미래사주
+            product 3 = 패키지
+
+            실제 결제 API는 여기 붙이면 됨.
+        */
+    });
+
+}
+
+
+// ============================================================
+// 사주 구매 상태
+// ============================================================
+
+const SAJU_PURCHASE_KEY = 'sajulog_purchase';
+
+function getSajuPurchase() {
+
+    const defaultState = {
+        traditional: false,
+        future: false,
+        package: false
+    };
+
+    try {
+        const saved = localStorage.getItem(SAJU_PURCHASE_KEY);
+
+        if (!saved) {
+            return defaultState;
+        }
+
+        return {
+            ...defaultState,
+            ...JSON.parse(saved)
+        };
+
+    } catch (e) {
+
+        console.error('구매정보 불러오기 실패:', e);
+
+        return defaultState;
+    }
+}
+
+
+function saveSajuPurchase(productType) {
+
+    const state = getSajuPurchase();
+
+
+    // 정통사주
+    if (productType === 'traditional') {
+        state.traditional = true;
+    }
+
+
+    // 미래사주
+    if (productType === 'future') {
+        state.future = true;
+    }
+
+
+    // 패키지
+    if (productType === 'package') {
+        state.package = true;
+
+        // 패키지는 둘 다 포함
+        state.traditional = true;
+        state.future = true;
+    }
+
+
+    localStorage.setItem(
+        SAJU_PURCHASE_KEY,
+        JSON.stringify(state)
+    );
+
+
+    console.log('구매상태 저장:', state);
+
+    return state;
+}

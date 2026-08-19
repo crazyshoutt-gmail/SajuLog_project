@@ -1027,3 +1027,40 @@ function updateReviewSlides(newReviews) {
   //   updateReviewSlides(data);
   // }
   // loadReviewsFromServer();
+
+
+  
+
+//   260819 사주 결제창 조절
+
+// ============================================================
+// 구매 상태에 따라 결과 페이지 적용
+// ============================================================
+function applySajuPurchaseState() {
+
+    if (typeof getSajuPurchase !== "function") {
+        console.warn("getSajuPurchase 함수를 찾을 수 없습니다.");
+        return;
+    }
+
+    const purchase = getSajuPurchase();
+
+    console.log("현재 구매 상태:", purchase);
+
+
+    // 정통사주 또는 패키지
+    if (purchase.traditional || purchase.package) {
+
+        if (typeof unlockPremium === "function") {
+            unlockPremium();
+        }
+
+    }
+
+}
+
+
+// 페이지 처음 들어왔을 때도 확인
+document.addEventListener("DOMContentLoaded", () => {
+    applySajuPurchaseState();
+});

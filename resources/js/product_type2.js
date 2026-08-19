@@ -297,3 +297,69 @@ document.addEventListener("click", (e) => {
                 });
             });
         })();
+
+
+// ============================================================
+// 선택 상품 → 구매 타입 변환
+// ============================================================
+function getProductType(target) {
+    switch (String(target)) {
+        case "1":
+            return "traditional";
+
+        case "2":
+            return "future";
+
+        case "3":
+            return "package";
+
+        default:
+            return null;
+    }
+}
+
+
+// ============================================================
+// 결제 버튼 클릭 시 구매상태 저장
+// ============================================================
+document.addEventListener("click", (e) => {
+    const paymentBtn = e.target.closest(".js_product_btn");
+    if (!paymentBtn) return;
+
+    const modal = document.getElementById("paymentModal");
+    if (!modal) return;
+
+    // 현재 선택된 상품
+    const selectedCard = modal.querySelector(".produc_choice_card.active");
+
+    if (!selectedCard) {
+        alert("상품을 선택해주세요.");
+        return;
+    }
+
+    // 결제수단 선택 여부
+    const selectedPayment = modal.querySelector(".js_product_choice_box.active");
+
+    if (!selectedPayment) {
+        alert("결제수단을 선택해주세요.");
+        return;
+    }
+
+    // 필수 약관
+    const requiredPolicy = modal.querySelector(".js_product_check[required]");
+
+    if (!requiredPolicy || !requiredPolicy.checked) {
+        alert("이용 약관에 동의해주세요.");
+        return;
+    }
+
+    const target = selectedCard.dataset.target;
+    const productType = getProductType(target);
+
+    if (!productType) return;
+
+    // common.js에 만든 함수
+    saveSajuPurchase(productType);
+
+    console.log("구매 상품:", productType);
+});
