@@ -19,7 +19,7 @@
         <!-- <header></header> -->
         <!-- <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section> -->
 
-        <div class="payment_modal type2" id="paymentModal">
+        <div class="payment_modal type3 active" id="paymentModal">
             <div class="payment_dim"></div>
 
             <section class="product">
@@ -28,10 +28,10 @@
                 <div class="inner">
 
                     <h1 class="js_payment_title product_tit"style="text-align:center;color:#fff;margin-bottom:1.5em;font-size:2em;">
-                        자네의 운명을 알고 모르고는<span>큰 차이가 있다네!</span>
+                        자네의 운명을 알고 모르고는<span>큰 차이가 있다네</span>
                     </h1>
 
-                    <div class="price_choice">
+                    <!-- <div class="price_choice">
 
                         <div class="price_btn_wrap">
                             <div class="price_btn active" data-target="1">라이트</div>
@@ -137,16 +137,112 @@
                             </div>
                         </div>
 
+                    </div> -->
+
+                    <div class="produc_choice_cardList">
+                        <div class="produc_choice_card" data-target="1">
+                            <div class="produc_choice_card_L">
+                                <div>
+                                    <h2>월하도령의 정통사주</h2>
+                                    <span>인기</span>
+                                </div>
+                                <p>현재의 나를 읽다</p>
+                            </div>
+                            <div class="produc_choice_card_R">
+                                <h2>2,900원</h2>
+                                <p>상세보기</p>
+                            </div>
+                        </div>
+                        <div class="produc_choice_card" data-target="2">
+                            <div class="produc_choice_card_L">
+                                <div>
+                                    <h2>월하도령의 미래사주</h2>
+                                </div>
+                                <p>미래의 나를 보다</p>
+                            </div>
+                            <div class="produc_choice_card_R">
+                                <h2>12,900원</h2>
+                                <p>상세보기</p>
+                            </div>
+                        </div>
+                        <div class="produc_choice_card" data-target="3">
+                            <div class="produc_choice_card_L">
+                                <div>
+                                    <h2>월하도령의 사주패키지</h2>
+                                    <span>강추</span>
+                                </div>
+                                <p>정통사주 + 미래사주</p>
+                            </div>
+                            <div class="produc_choice_card_R">
+                                <h2>9,900원</h2>
+                                <p>상세보기</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proudct_choice_explainList">
+                        <div class="proudct_choice_explainCard js_proudct_choice_explainCard" data-share="1"></div>
+                        <div class="proudct_choice_explainCard js_proudct_choice_explainCard" data-share="2"></div>
+                        <div class="proudct_choice_explainCard js_proudct_choice_explainCard" data-share="3"></div>
+                    </div>
+
+
+                    <div class="choice_type">
+
+                        <div class="product_choice_option">
+                            <div class="product_choice choice_type">
+                                <div class="js_product_choice_box choice_type_box">신용/체크카드</div>
+                                <div class="js_product_choice_box choice_type_box">계좌이체</div>
+                                <div class="js_product_choice_box choice_type_box">카카오페이</div>
+                            </div>
+                        </div>
+
+                        <div class="product_policy" style="margin-bottom: 1%;">
+                            <input type="checkbox" id="policy_01" class="js_product_check" checked required>
+                            <label for="policy_01">(필수) 이용약관, 개인정보처리방침 및 환불정책 내용을 확인하고 동의합니다.</label>
+                            <a href="./policy_1.html" target="_blank" style="display: inline-block; font-size: 0.7em; opacity: 0.8; position: relative; z-index: 2;" id="go_policy1">[자세히보기]</a>
+                        </div>
+                        
+                        <div class="product_policy">
+                            <input type="checkbox" id="policy_02" class="js_product_check" value="광고수신동의">
+                            <label for="policy_02">(선택) 이벤트 및 혜택 안내를 위한 광고성 정보 수신에 동의합니다.</label>
+                            <a href="./policy_2.html" target="_blank" style="font-size: 0.8em; opacity: 0.8;" id="go_policy2">[자세히보기]</a>
+                        </div>
+
+                        <button class="js_product_btn">결제하기</button>
                     </div>
 
                 </div>
             </section>
         </div>
 
-       <script src="./resources/js/result_match.js"></script>
+       <script src="./resources/js/product_type2.js"></script>
 
-
+        <!-- 260819 -->
         <script>
+        (function() {
+            var priceBtns = document.querySelectorAll('.produc_choice_card');
+            priceBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();   // 추가
+
+                    document.querySelector('.product_choice_option').classList.add('active')
+
+                    document.querySelectorAll('.produc_choice_card').forEach(function(b) {
+                        b.classList.remove('active');
+                    });
+                    btn.classList.add('active');
+
+                    var target = btn.dataset.target;
+                    document.querySelectorAll('.js_proudct_choice_explainCard').forEach(function(box) {
+                        box.classList.toggle('active', box.dataset.share === target);
+                    });
+                });
+            });
+        })();
+        </script>
+
+        <!-- <script>
         (function() {
             var priceBtns = document.querySelectorAll('.price_btn');
             priceBtns.forEach(function(btn) {
@@ -165,7 +261,7 @@
                 });
             });
         })();
-        </script>
+        </script> -->
     </body>
 
 

@@ -908,35 +908,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// document.addEventListener("click", (e) => {
+//     const box = e.target.closest(".choice_type_box");
+//     if (!box) return;
+
+//     const modal = document.getElementById("paymentModal");
+//     if (!modal) return;
+
+//     // 결제수단 전체에서 active 제거
+//     modal.querySelectorAll(".choice_type_box").forEach(item => {
+//         item.classList.remove("active");
+//     });
+
+//     // 클릭한 결제수단 강제 active
+//     box.classList.add("active");
+
+//     console.log("결제수단 active:", box.textContent.trim());
+// });
+
+
+
+// document.addEventListener("click", (e) => {
+//     const btn = e.target.closest(".price_btn");
+//     if (!btn) return;
+
+//     document.querySelectorAll('.price_btn').forEach(b => b.classList.remove('active'));
+//     btn.classList.add('active');
+
+//     const target = btn.dataset.target;
+//     document.querySelectorAll('.js_share_box').forEach(box => {
+//         box.classList.toggle('active', box.dataset.share === target);
+//     });
+// });
+
+
+
+
+
+
+
+
+// 260819
+
 document.addEventListener("click", (e) => {
-    const box = e.target.closest(".choice_type_box");
+    const box = e.target.closest(".js_product_choice_box");
     if (!box) return;
 
-    const modal = document.getElementById("paymentModal");
+    const modal = box.closest("#paymentModal");
     if (!modal) return;
 
-    // 결제수단 전체에서 active 제거
-    modal.querySelectorAll(".choice_type_box").forEach(item => {
+    // type3 모달에서만 사용
+    if (!modal.classList.contains("type3")) return;
+
+    // 결제수단 active 초기화
+    modal.querySelectorAll(".js_product_choice_box").forEach(item => {
         item.classList.remove("active");
     });
 
-    // 클릭한 결제수단 강제 active
+    // 선택한 결제수단 활성화
     box.classList.add("active");
 
-    console.log("결제수단 active:", box.textContent.trim());
+    // 결제 버튼 활성화
+    const paymentBtn = modal.querySelector(".js_product_btn");
+
+    if (paymentBtn) {
+        paymentBtn.classList.remove("ready");
+        paymentBtn.classList.add("active");
+    }
+
+    console.log("결제수단 선택:", box.textContent.trim());
 });
 
 
-
-document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".price_btn");
-    if (!btn) return;
-
-    document.querySelectorAll('.price_btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const target = btn.dataset.target;
-    document.querySelectorAll('.js_share_box').forEach(box => {
-        box.classList.toggle('active', box.dataset.share === target);
-    });
-});

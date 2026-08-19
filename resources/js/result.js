@@ -577,7 +577,7 @@ function renderReviews() {
           if (!wrap || !list) return;
         
           const VISIBLE   = 5;      // 한 번에 보이는 개수
-          const INTERVAL  = 2200;   // 자동 재생 간격 (ms)
+          const INTERVAL  = 2000;   // 자동 재생 간격 (ms)
           const DURATION  = 600;    // 슬라이드 전환 시간 (ms)
           const DIRECTION = 'down'; // 'down' 아래로 / 'up' 위로
         
