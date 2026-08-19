@@ -1078,7 +1078,7 @@ function applySajuPurchaseState() {
     // ========================================
     if (purchase.future) {
 
-        premiumBtn.textContent = "미래사주 보러가기";
+        premiumBtn.textContent = "미래사주 넘어가기";
 
         // 결제모달이 열리지 않도록 openPayment 제거
         premiumBtn.classList.remove("openPayment");
