@@ -1190,21 +1190,70 @@ function initType3Payment(modal) {
 
 
         const productTypeMap = {
-            "1": "traditional",
-            "2": "future",
-            "3": "package"
-        };
+    "1": "traditional",
+    "2": "future",
+    "3": "package"
+};
 
-        const productType = productTypeMap[selectedProduct];
+const productType = productTypeMap[selectedProduct];
 
-        if (productType) {
-            saveSajuPurchase(productType);
-        }
+if (!productType) return;
 
-        if (typeof applySajuPurchaseState === "function") {
-            applySajuPurchaseState();
-        }
-        closeModal();
+
+// 구매 상태 저장
+saveSajuPurchase(productType);
+
+
+// ============================================================
+// 정통사주
+// ============================================================
+if (productType === "traditional") {
+
+    // result.html의 정통사주 영역 즉시 해제
+    if (typeof applySajuPurchaseState === "function") {
+        applySajuPurchaseState();
+    }
+
+    closeModal();
+
+    alert("결제완료되었습니다.");
+
+    // 이동하지 않음
+    return;
+}
+
+
+// ============================================================
+// 미래사주
+// ============================================================
+if (productType === "future") {
+
+    // ★ 정통사주 해제하지 않음
+    closeModal();
+
+    // 미래사주 결과로 바로 이동
+    window.location.href = "./result_prem.html";
+
+    return;
+}
+
+
+// ============================================================
+// 패키지
+// ============================================================
+if (productType === "package") {
+
+    // 패키지에는 정통사주가 포함되어 있으므로 result.html 해제
+    if (typeof applySajuPurchaseState === "function") {
+        applySajuPurchaseState();
+    }
+
+    closeModal();
+
+    // 알림 없음
+    // 이동도 없음
+    return;
+}
 
         console.log("TYPE3 결제 실행", {
             product: selectedProduct,

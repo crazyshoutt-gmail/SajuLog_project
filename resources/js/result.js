@@ -1029,7 +1029,7 @@ function updateReviewSlides(newReviews) {
   // loadReviewsFromServer();
 
 
-  
+
 
 //   260819 사주 결제창 조절
 
@@ -1048,13 +1048,59 @@ function applySajuPurchaseState() {
     console.log("현재 구매 상태:", purchase);
 
 
-    // 정통사주 또는 패키지
-    if (purchase.traditional || purchase.package) {
+    // ========================================
+    // 정통사주를 가지고 있으면 정통 결과 해제
+    // ========================================
+    if (purchase.traditional) {
 
         if (typeof unlockPremium === "function") {
             unlockPremium();
         }
+    }
 
+
+    // ========================================
+    // 하단 CTA
+    // ========================================
+    const premiumBtnWrap =
+        document.querySelector(".main_preSajuBtn_btm");
+
+    const premiumBtn =
+        premiumBtnWrap?.querySelector("a");
+
+
+    if (!premiumBtn) return;
+
+
+    // ========================================
+    // 미래사주까지 이미 가지고 있음
+    // 패키지도 future:true이므로 여기 해당
+    // ========================================
+    if (purchase.future) {
+
+        premiumBtn.textContent = "미래사주 보러가기";
+
+        // 결제모달이 열리지 않도록 openPayment 제거
+        premiumBtn.classList.remove("openPayment");
+
+        // 바로 미래사주 결과 이동
+        premiumBtn.href = "./result_prem.html";
+
+        return;
+    }
+
+
+    // ========================================
+    // 정통사주만 구매함
+    // ========================================
+    if (purchase.traditional) {
+
+        premiumBtn.textContent = "나의 미래흐름 확인하기";
+
+        // 이 버튼은 다시 결제모달을 열어야 함
+        premiumBtn.classList.add("openPayment");
+
+        premiumBtn.href = "./register_prem.html";
     }
 
 }

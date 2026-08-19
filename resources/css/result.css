@@ -1095,7 +1095,7 @@ background-clip: text;
 color: transparent;
 -webkit-text-fill-color: transparent; }
 .result_explainCard .result_explainCard_txt p { font-family: 'BookendBatang'; line-height: 150%; }
-.main_preSajuBtn_btm { margin: 10% auto !important; }
+.main_preSajuBtn_btm { margin: 10% auto 0%  !important; }
 .result_btm.premium_unlocked::after { display: none !important; }
 
 /* 260814 */
@@ -1221,4 +1221,28 @@ height: 2em; }
     width: 100%;
     display: block;
     transform: translateX(10%) translateY(30%);
+  }
+
+  .result_moreSaju_txt{
+    container-type: inline-size;
+    width: 100%; text-align: center; color: white;
+    margin: 8% auto; margin-bottom: 4%;
+  }
+  .result_moreSaju_txt>div{
+    text-align: center; font-size: 4cqw; font-family: 'maruburi';
+    font-weight: 400;
+  }
+  .result_moreSaju_txt>div:nth-child(1){margin-bottom: 5%;}
+
+  .result_moreSaju_txt>div span{
+    color: #DDC49C; font-weight: 500;
+  }
+
+  .result_moreSaju_txt>div b{
+    background: linear-gradient(#FFFFFF, #DDC49C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-top: 2%; display: inline-block; font-size: 4.5cqw;
   }
