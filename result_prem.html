@@ -48,6 +48,17 @@
     .crt_radarNote p { font-size: .92em; opacity: .9; }
 
 
+    /* 260820 */
+    .result_prem_stTitle{
+        width: 100%; padding: 5% 0; container-type: inline-size;
+        color: white; text-align: center; max-width: 800px; padding-top: 10%;
+    }
+    .result_prem_stTitle h2{font-size: 8cqw; font-family: 'MaruBuri';}
+    .result_prem_stTitle p{
+        font-size: 5.5cqw; color: #DDC49C; font-weight: 500; margin-top: 0.3lh;
+    }
+
+
     </style>
 </head>
 <body>
@@ -81,11 +92,55 @@
 
 
     <section id="res_pre1" class="resultPrem_sec1">
+        <div class="result_prem_stTitle">
+            <h2>"나의 운세 흐름"</h2>
+            <p>향후 10년, 나의 운세 흐름</p>
+        </div>
         <div class="result_premTop">
-            <!-- 현행: 히어로 = LLM이 고른 상황 삽화(서버 이미지, 절대URL) -->
-            <img src="https://sajulog.com/saju/img/premium/saju/personality/2%20겉은%20부드럽지만%20내면은%20강한%20반전%20성격.webp" alt="">
+            <!-- 현행: 히어로 = 첫장 메인 고정 삽화(서버 이미지, 절대URL) -->
+            <img src="./resources/img/result/result_prem_stImg.webp" alt="">
             <div class="result_premTitle">
                 <!-- 현행: 고정 제목이미지(prem_result_ch1_1.webp) → 동적 텍스트(CHAPTER n : 일반풀이 예고 / LLM 제목) -->
+                <!-- <div class="crt_chHead">
+                    <p class="crt_chLabel">CHAPTER 1 : 잘하던 사람이 멈추는 진짜 이유</p>
+                    <h2 class="crt_chTitle">참아 온 기준을 이제는 선명하게 세우고 말과 행동의 순서를 바꾸어야 하오</h2>
+                </div> -->
+                <h2>
+                    반드시 숙지하시게
+                </h2>
+            </div>
+        </div>
+        <!-- 차트 -->
+        <div class="result_prem_grBox"></div>
+
+        <div class="result_premMid">
+            <div class="result_prem_pointTxt">
+                <span class="crt_chips"><span>#속의 기준과 겉의 순응</span><span>#인정욕구의 소진</span><span>#기준을 먼저 말하기</span></span>
+                이으이님은 남이 정한 틀에 맞추느라 힘을 쓰기보다, 자신의 기준을 먼저 밝힐 때 능력이 온전히 드러나오.
+            </div>
+            <p></p>
+        </div>
+        <div class="reult_premBot">
+            <div class="result_prem_mainTxt">
+겉으로는 웬만한 일에 맞춰 주는 듯 보이지만, 혼자 돌아온 뒤에는 왜 그 말을 그대로 받아들였는지 오래 곱씹어 왔을 것이오. 부탁을 거절하지 못해서가 아니라, 일을 망치거나 사람을 실망시키는 사람으로 보이고 싶지 않았기 때문이오. 지금까지는 참고 맞추는 방식으로 관계와 일을 지켜 왔으나, 그 대가로 속에서 피로가 쌓였소.
+<br><br>
+타고난 중심은 부드럽고 현실적인 흙의 성질이오. 여기에 불 기운이 두텁게 깔려 있어 책임감과 배움의 의지가 강하고, 나무 기운은 해야 할 기준과 원칙을 세우게 하오. 반면 쇠 기운의 날카로운 말과 물 기운의 여유가 적어, 판단은 분명해도 그것을 차분히 설명하고 감정을 식히는 시간이 부족하오. 그래서 참다가 한 번에 단호해지는 장면이 반복되오.
+<br><br>
+앞으로 중요한 제안을 받을 때는 호감이나 인정 여부보다 세 가지를 먼저 보시게. 내가 책임질 범위가 문장으로 적혀 있는가, 상대도 같은 만큼 부담을 지는가, 지금 결정해도 수정할 여지가 있는가를 확인해야 하오. 이 셋이 흐리면 좋은 기회가 아니라 책임을 떠넘기는 자리일 수 있소.
+<br><br>
+경고 신호는 부탁받은 즉시 대답하고, 집에 돌아와 조건을 다시 계산하는 일이오. 그때는 승낙을 미루고 “범위와 기한을 확인한 뒤 답하겠소”라고 말하시게. 먼저 할 일은 이번 주에 맡은 일 가운데 본래 책임이 아닌 항목을 세 줄로 적는 것이오. <span class="crt_gold">대답하기 전에 책임 범위와 수정 조건부터 확인하기</span>
+<br><br>
+앞으로는 친절을 줄이는 것이 아니라 친절의 한도를 정해야 하오. 회의나 대화에서는 결론을 대신 내리지 말고, 자신의 의견과 상대의 요청을 분리해 말하시게. 반대로 하지 말아야 할 행동은 상대가 서운해할까 봐 조건 없이 먼저 약속하는 일이오. 기준을 숨기지 않을 때 오히려 오래 가는 관계와 성과가 남게 되오.
+            </div>
+        </div>
+    </section>
+
+        <!-- <section id="res_pre1" class="resultPrem_sec1">
+        <div class="result_premTop">
+            현행: 히어로 = LLM이 고른 상황 삽화(서버 이미지, 절대URL)
+            <img src="https://sajulog.com/saju/img/premium/saju/personality/2%20겉은%20부드럽지만%20내면은%20강한%20반전%20성격.webp" alt="">
+            <div class="result_premTitle">
+                현행: 고정 제목이미지(prem_result_ch1_1.webp) → 동적 텍스트(CHAPTER n : 일반풀이 예고 / LLM 제목)
                 <div class="crt_chHead">
                     <p class="crt_chLabel">CHAPTER 1 : 잘하던 사람이 멈추는 진짜 이유</p>
                     <h2 class="crt_chTitle">참아 온 기준을 이제는 선명하게 세우고 말과 행동의 순서를 바꾸어야 하오</h2>
@@ -112,7 +167,7 @@
 앞으로는 친절을 줄이는 것이 아니라 친절의 한도를 정해야 하오. 회의나 대화에서는 결론을 대신 내리지 말고, 자신의 의견과 상대의 요청을 분리해 말하시게. 반대로 하지 말아야 할 행동은 상대가 서운해할까 봐 조건 없이 먼저 약속하는 일이오. 기준을 숨기지 않을 때 오히려 오래 가는 관계와 성과가 남게 되오.
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
