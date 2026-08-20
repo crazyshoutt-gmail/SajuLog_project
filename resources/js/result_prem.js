@@ -420,3 +420,26 @@ syncPadding();
 
 });
 
+// 260820
+document.querySelectorAll('.result_prem_toggleBox').forEach(box => {
+    const trigger = box.querySelector('.result_premMid');
+    const content = box.querySelector('.reult_premBot');
+
+    if (!trigger || !content) return;
+
+    trigger.addEventListener('click', () => {
+        const isOpen = box.classList.contains('is-open');
+
+        if (isOpen) {
+            content.style.height = content.scrollHeight + 'px';
+
+            requestAnimationFrame(() => {
+                box.classList.remove('is-open');
+                content.style.height = '0px';
+            });
+        } else {
+            box.classList.add('is-open');
+            content.style.height = content.scrollHeight + 'px';
+        }
+    });
+});
