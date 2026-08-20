@@ -1036,6 +1036,13 @@ function updateReviewSlides(newReviews) {
 // ============================================================
 // 구매 상태에 따라 결과 페이지 적용
 // ============================================================
+
+function purchase_trueOpenPage(){
+    document.querySelector('.result_moreSaju_txt').classList.add('active');
+    document.querySelector('.result_moreSaju_BgImg').classList.add('active');
+    document.querySelector('.result_moreSaju_btns').classList.add('active');
+}
+
 function applySajuPurchaseState() {
 
     if (typeof getSajuPurchase !== "function") {
@@ -1048,6 +1055,7 @@ function applySajuPurchaseState() {
     console.log("현재 구매 상태:", purchase);
 
 
+
     // ========================================
     // 정통사주를 가지고 있으면 정통 결과 해제
     // ========================================
@@ -1055,6 +1063,7 @@ function applySajuPurchaseState() {
 
         if (typeof unlockPremium === "function") {
             unlockPremium();
+            purchase_trueOpenPage();
         }
     }
 
@@ -1085,6 +1094,7 @@ function applySajuPurchaseState() {
 
         // 바로 미래사주 결과 이동
         premiumBtn.href = "./result_prem.html";
+        purchase_trueOpenPage();
 
         return;
     }
@@ -1096,6 +1106,7 @@ function applySajuPurchaseState() {
     if (purchase.traditional) {
 
         premiumBtn.textContent = "나의 미래흐름 확인하기";
+        purchase_trueOpenPage();
 
         // 이 버튼은 다시 결제모달을 열어야 함
         premiumBtn.classList.add("openPayment");

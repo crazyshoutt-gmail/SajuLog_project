@@ -1226,7 +1226,7 @@ height: 2em; }
   .result_moreSaju_txt{
     container-type: inline-size;
     width: 100%; text-align: center; color: white;
-    margin: 8% auto; margin-bottom: 4%;
+    margin: 8% auto; margin-bottom: 4%; display: none;
   }
   .result_moreSaju_txt>div{
     text-align: center; font-size: 4cqw; font-family: 'maruburi';
@@ -1246,3 +1246,8 @@ height: 2em; }
     font-weight: 700;
     margin-top: 2%; display: inline-block; font-size: 4.5cqw;
   }
+  .result_moreSaju_BgImg{display: none;}
+  .result_moreSaju_BgImg.active{display: block;}
+  .result_moreSaju_txt.active{display: block;}
+  .result_moreSaju_btns{display: none;}
+  .result_moreSaju_btns.active{display: block;}
