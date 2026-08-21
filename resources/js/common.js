@@ -1211,7 +1211,7 @@ if (productType === "traditional") {
 
     // result.html의 정통사주 영역 즉시 해제
     if (typeof applySajuPurchaseState === "function") {
-        applySajuPurchaseState();
+        applySajuPurchaseState(true);
     }
 
     closeModal();
@@ -1245,7 +1245,7 @@ if (productType === "package") {
 
     // 패키지에는 정통사주가 포함되어 있으므로 result.html 해제
     if (typeof applySajuPurchaseState === "function") {
-        applySajuPurchaseState();
+        applySajuPurchaseState(true);
     }
 
     closeModal();

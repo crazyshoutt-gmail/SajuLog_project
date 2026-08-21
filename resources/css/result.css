@@ -206,6 +206,7 @@ transition: 0.3s;
 .result_explainTxtBox{
     text-align: center; padding-top: 5%; font-size: 1.45em; line-height: 1.5;
     width: 95%; margin: auto; overflow: hidden; word-break: keep-all; font-weight: 400;
+    display: none !important;
 }
 
 .result_explainList{position: relative; z-index: 3;}

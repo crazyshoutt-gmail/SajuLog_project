@@ -319,6 +319,7 @@ function renderExplains() {
 
     `;
     container.appendChild(card);
+    card.style.display = 'none';
 }
 
 // ============================================================
@@ -347,15 +348,33 @@ function unlockAll() {
     const titPer = document.querySelector('.js_result_titPer');
     const explainTitle = document.querySelector('.js_result_explainTitle');
     const resultBtm = document.querySelector('.js_result_btm');
+    const btmCta = document.querySelector('.js_result_btm_cta');
+    const btmPreview = document.querySelector('.result_btm_previewExplainList');
+    const btmExplainList = document.querySelector('.js_result_btm_explainList');
+    const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
+    const moreText = document.querySelector('.result_moreSaju_txt');
+    const moreButton = document.querySelector('.result_moreSaju_btns');
+    const moreBackground = document.querySelector('.result_moreSaju_BgImg');
 
     if (unlockBox) unlockBox.style.setProperty('display', 'none', 'important');
-    if (explainList) explainList.style.setProperty('display', 'block', 'important');
+    if (explainList) {
+        explainList.style.setProperty('display', 'block', 'important');
+        renderExplains();
+        explainList.querySelector('.result_explainTxtBox')?.style.setProperty('display', 'block', 'important');
+    }
     if (premSection) premSection.style.setProperty('display', 'block', 'important');
     if (reviewSection) reviewSection.style.setProperty('display', 'block', 'important');
 
     if (titPer) titPer.style.setProperty('display', 'block', 'important');
     if (explainTitle) explainTitle.style.setProperty('display', 'flex', 'important');
     if (resultBtm) resultBtm.style.setProperty('display', 'block', 'important');
+    if (btmCta) btmCta.style.setProperty('display', 'block', 'important');
+    if (btmPreview) btmPreview.style.setProperty('display', 'block', 'important');
+    if (btmExplainList) btmExplainList.style.setProperty('display', 'none', 'important');
+    if (premiumBtn) premiumBtn.style.setProperty('display', 'none', 'important');
+    if (moreText) moreText.classList.remove('active');
+    if (moreButton) moreButton.classList.remove('active');
+    if (moreBackground) moreBackground.classList.remove('active');
 }
 
 
@@ -791,12 +810,19 @@ function toggleExplainBtm(index, element) {
 }
 
 function unlockPremium() {
+    const explainList = document.querySelector('.js_result_explainList');
     const btmCta = document.querySelector('.js_result_btm_cta');
     const btmBlur = document.querySelector('.result_btm_previewExplainList');
     const btmExplainList = document.querySelector('.js_result_btm_explainList');
     const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
 
-    // 기존 "들여다보기" CTA 제거
+    if (explainList) {
+        explainList.style.setProperty('display', 'block', 'important');
+        renderExplains();
+        explainList.querySelector('.result_explainTxtBox')?.style.setProperty('display', 'block', 'important');
+    }
+
+    // 결제 완료 후 무료 CTA와 미리보기 숨김
     if (btmCta) {
         btmCta.style.setProperty('display', 'none', 'important');
     }
@@ -814,12 +840,20 @@ function unlockPremium() {
 
     // "프리미엄도 보러가기" 노출
     if (premiumBtn) {
+        const premiumLink = premiumBtn.querySelector('a');
         premiumBtn.style.setProperty('display', 'block', 'important');
+        if (premiumLink) {
+            premiumLink.classList.remove('openPayment');
+            premiumLink.textContent = '미래사주 넘어가기';
+            premiumLink.href = './result_prem.html';
+        }
     }
 
 
     const resultBtm = document.querySelector('.result_btm');
 if (resultBtm) resultBtm.classList.add('premium_unlocked');
+
+    purchase_trueOpenPage();
 }
 
 
@@ -1043,7 +1077,9 @@ function purchase_trueOpenPage(){
     document.querySelector('.result_moreSaju_btns').classList.add('active');
 }
 
-function applySajuPurchaseState() {
+function applySajuPurchaseState(force = false) {
+
+    if (!force) return;
 
     if (typeof getSajuPurchase !== "function") {
         console.warn("getSajuPurchase 함수를 찾을 수 없습니다.");
@@ -1119,5 +1155,5 @@ function applySajuPurchaseState() {
 
 // 페이지 처음 들어왔을 때도 확인
 document.addEventListener("DOMContentLoaded", () => {
-    applySajuPurchaseState();
+    applySajuPurchaseState(false);
 });
