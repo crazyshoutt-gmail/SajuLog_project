@@ -1104,7 +1104,7 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
-.result_btm > img { margin-top: -35%; position: relative; z-index: 1; }
+.result_btm > img { margin-top: -5%; position: relative; z-index: 1; }
 
 /* 260811 */
 

@@ -34,44 +34,44 @@ const sajuAniImg = {
   pig: "w_pig.webp",
 }
 
-const sajuExplains = [
-    {
-        title: "속궁합과 겉궁합",
-        content: "두 사람은 겉으로 보이는 성격과 행동 방식이 잘 맞아 처음 만남부터 편안함을 느끼는 궁합입니다. 겉궁합은 매우 좋은 편으로, 대화가 자연스럽고 서로의 존재가 안정감을 줍니다. 다만 속궁합의 경우 내면의 욕구와 감정 표현 방식이 다소 달라 깊은 관계로 발전할수록 세심한 배려가 필요합니다."
-    },
-    {
-        title: "상생과 상극",
-        content: "두 사람의 오행을 살펴보면 목(木)과 화(火)의 상생 관계가 형성되어 있어 한 사람의 에너지가 다른 사람을 자연스럽게 북돋아 주는 구조입니다. 다만 일부 지지에서 상극 기운이 존재하므로 감정이 격해지는 순간에는 서로를 자극하지 않도록 주의가 필요합니다."
-    },
-    {
-        title: "인연의 깊이",
-        content: "두 사람의 인연은 단순한 만남이 아닌 전생부터 이어져 온 깊은 흔적이 사주에 남아 있습니다. 처음 만났음에도 오래 알고 지낸 듯한 익숙함을 느끼는 것도 이 때문입니다. 이 인연을 소중히 가꾸어 나간다면 오랜 시간이 지나도 변치 않는 깊은 유대로 발전할 수 있습니다."
-    },
-    {
-        title: "두 사람 사이의 위기 시점",
-        content: "사주의 흐름상 두 사람 사이에 갈등이 커질 수 있는 시기가 존재합니다. 특히 금(金) 기운이 강해지는 가을철과 경신년(庚辛年) 주기에 오해와 마찰이 생기기 쉽습니다. 이 시기에는 큰 결정을 서두르지 말고, 작은 일에 감정을 소모하지 않는 것이 중요합니다. 위기를 미리 알고 대비하는 것만으로도 관계의 고비를 훨씬 수월하게 넘길 수 있습니다."
-    },
-    {
-        title: "결혼 궁합 — 부부로 살면 어떨까?",
-        content: "두 사람이 부부로 맺어진다면 초반 3~5년은 서로의 다름을 맞춰가는 적응기가 필요합니다. 일간의 음양 배합이 비교적 조화롭고 배우자 자리(일지)에서 합(合)의 기운이 감지되어 정서적 안정감을 주는 결혼 궁합입니다. 재물 운용 방식과 생활 습관의 차이를 초반에 조율해 두면 함께할수록 더욱 단단해지는 부부가 될 수 있습니다."
-    },
-    {
-        title: "함께 일하면? 비즈니스 궁합",
-        content: "두 사람의 사주에서 관성과 식상의 흐름이 서로 보완적으로 작용하여 비즈니스 파트너로서 좋은 시너지를 낼 수 있는 조합입니다. 한 명은 아이디어와 추진력을, 다른 한 명은 안정적인 실행력을 담당하는 구조로 역할 분담이 자연스럽게 이루어집니다. 다만 금전 관계가 얽히면 감정 문제로 번질 수 있으니 계약과 정산은 명확히 하는 것이 좋습니다."
-    },
-    {
-        title: "자녀 인연 — 아이와의 궁합",
-        content: "두 사람이 맺어졌을 때 자녀 인연이 어떻게 나타나는지 사주로 살펴볼 수 있습니다. 두 사람의 사주 구조상 자녀 자리(시주)의 기운이 활발하여 아이와의 인연이 깊고, 자녀로 인해 두 사람의 관계가 더욱 단단해지는 흐름이 보입니다. 첫째 아이와의 인연이 특히 강하며, 아이를 통해 두 사람이 서로를 더 깊이 이해하게 되는 계기가 만들어집니다."
-    },
-    {
-        title: "전생 인연 — 우리는 왜 만났을까?",
-        content: "사주명리학에서는 현생의 깊은 인연 뒤에 전생의 업(業)이 작용한다고 봅니다. 두 사람의 사주에는 공통된 지지(地支) 암합의 흔적이 있어, 단순한 우연이 아닌 필연적 끌림으로 만나게 된 인연임을 암시합니다. 전생에서 미처 매듭짓지 못한 인연이 이번 생에 다시 이어진 것으로, 서로에게 배워야 할 것과 나누어야 할 것이 분명히 존재합니다."
-    },
-    {
-        title: "조언 및 해결책",
-        content: "두 사람이 오랫동안 좋은 관계를 유지하기 위해서는 서로의 페이스를 존중하는 것이 가장 중요합니다. 갈등이 생겼을 때는 감정이 가라앉은 후 대화하는 것을 권장하며, 목(木) 기운이 강한 봄철과 동쪽 방향이 두 사람 모두에게 길한 기운을 불어넣어 주는 시기와 방향입니다."
-    }
-];
+// const sajuExplains = [
+//     {
+//         title: "속궁합과 겉궁합",
+//         content: "두 사람은 겉으로 보이는 성격과 행동 방식이 잘 맞아 처음 만남부터 편안함을 느끼는 궁합입니다. 겉궁합은 매우 좋은 편으로, 대화가 자연스럽고 서로의 존재가 안정감을 줍니다. 다만 속궁합의 경우 내면의 욕구와 감정 표현 방식이 다소 달라 깊은 관계로 발전할수록 세심한 배려가 필요합니다."
+//     },
+//     {
+//         title: "상생과 상극",
+//         content: "두 사람의 오행을 살펴보면 목(木)과 화(火)의 상생 관계가 형성되어 있어 한 사람의 에너지가 다른 사람을 자연스럽게 북돋아 주는 구조입니다. 다만 일부 지지에서 상극 기운이 존재하므로 감정이 격해지는 순간에는 서로를 자극하지 않도록 주의가 필요합니다."
+//     },
+//     {
+//         title: "인연의 깊이",
+//         content: "두 사람의 인연은 단순한 만남이 아닌 전생부터 이어져 온 깊은 흔적이 사주에 남아 있습니다. 처음 만났음에도 오래 알고 지낸 듯한 익숙함을 느끼는 것도 이 때문입니다. 이 인연을 소중히 가꾸어 나간다면 오랜 시간이 지나도 변치 않는 깊은 유대로 발전할 수 있습니다."
+//     },
+//     {
+//         title: "두 사람 사이의 위기 시점",
+//         content: "사주의 흐름상 두 사람 사이에 갈등이 커질 수 있는 시기가 존재합니다. 특히 금(金) 기운이 강해지는 가을철과 경신년(庚辛年) 주기에 오해와 마찰이 생기기 쉽습니다. 이 시기에는 큰 결정을 서두르지 말고, 작은 일에 감정을 소모하지 않는 것이 중요합니다. 위기를 미리 알고 대비하는 것만으로도 관계의 고비를 훨씬 수월하게 넘길 수 있습니다."
+//     },
+//     {
+//         title: "결혼 궁합 — 부부로 살면 어떨까?",
+//         content: "두 사람이 부부로 맺어진다면 초반 3~5년은 서로의 다름을 맞춰가는 적응기가 필요합니다. 일간의 음양 배합이 비교적 조화롭고 배우자 자리(일지)에서 합(合)의 기운이 감지되어 정서적 안정감을 주는 결혼 궁합입니다. 재물 운용 방식과 생활 습관의 차이를 초반에 조율해 두면 함께할수록 더욱 단단해지는 부부가 될 수 있습니다."
+//     },
+//     {
+//         title: "함께 일하면? 비즈니스 궁합",
+//         content: "두 사람의 사주에서 관성과 식상의 흐름이 서로 보완적으로 작용하여 비즈니스 파트너로서 좋은 시너지를 낼 수 있는 조합입니다. 한 명은 아이디어와 추진력을, 다른 한 명은 안정적인 실행력을 담당하는 구조로 역할 분담이 자연스럽게 이루어집니다. 다만 금전 관계가 얽히면 감정 문제로 번질 수 있으니 계약과 정산은 명확히 하는 것이 좋습니다."
+//     },
+//     {
+//         title: "자녀 인연 — 아이와의 궁합",
+//         content: "두 사람이 맺어졌을 때 자녀 인연이 어떻게 나타나는지 사주로 살펴볼 수 있습니다. 두 사람의 사주 구조상 자녀 자리(시주)의 기운이 활발하여 아이와의 인연이 깊고, 자녀로 인해 두 사람의 관계가 더욱 단단해지는 흐름이 보입니다. 첫째 아이와의 인연이 특히 강하며, 아이를 통해 두 사람이 서로를 더 깊이 이해하게 되는 계기가 만들어집니다."
+//     },
+//     {
+//         title: "전생 인연 — 우리는 왜 만났을까?",
+//         content: "사주명리학에서는 현생의 깊은 인연 뒤에 전생의 업(業)이 작용한다고 봅니다. 두 사람의 사주에는 공통된 지지(地支) 암합의 흔적이 있어, 단순한 우연이 아닌 필연적 끌림으로 만나게 된 인연임을 암시합니다. 전생에서 미처 매듭짓지 못한 인연이 이번 생에 다시 이어진 것으로, 서로에게 배워야 할 것과 나누어야 할 것이 분명히 존재합니다."
+//     },
+//     {
+//         title: "조언 및 해결책",
+//         content: "두 사람이 오랫동안 좋은 관계를 유지하기 위해서는 서로의 페이스를 존중하는 것이 가장 중요합니다. 갈등이 생겼을 때는 감정이 가라앉은 후 대화하는 것을 권장하며, 목(木) 기운이 강한 봄철과 동쪽 방향이 두 사람 모두에게 길한 기운을 불어넣어 주는 시기와 방향입니다."
+//     }
+// ];
 
 const sajuMatch = {
     Point: {
@@ -473,97 +473,4 @@ function setupPriceBtnToggle() {
             });
         });
     });
-}
-
-
-
-// 추가
-
-// ▼ 추가: btm 영역 전용 아코디언 토글 (기존 toggleExplain과 충돌 방지)
-function toggleExplainBtm(index, element) {
-    const parent = element.parentElement;
-    document.querySelectorAll('.js_result_btm_explainList .result_explainCard').forEach(card => {
-        if (card !== parent) card.classList.remove('on');
-    });
-    parent.classList.toggle('on');
-}
-
-function unlockPremium() {
-    const btmCta = document.querySelector('.js_result_btm_cta');
-    const btmBlur = document.querySelector('.result_btm_previewExplainList');
-    const btmExplainList = document.querySelector('.js_result_btm_explainList');
-    const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
-
-    // 기존 "들여다보기" CTA 제거
-    if (btmCta) {
-        btmCta.style.setProperty('display', 'none', 'important');
-    }
-
-    // 블러 제거
-    if (btmBlur) {
-        btmBlur.style.setProperty('display', 'none', 'important');
-    }
-
-    // 라이트 해설 노출
-    if (btmExplainList) {
-        btmExplainList.style.setProperty('display', 'block', 'important');
-        renderExplainsBtm();
-    }
-
-    // "프리미엄도 보러가기" 노출
-    if (premiumBtn) {
-        premiumBtn.style.setProperty('display', 'block', 'important');
-    }
-
-
-    const resultBtm = document.querySelector('.result_btm');
-if (resultBtm) resultBtm.classList.add('premium_unlocked');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const previewList = document.querySelector('.result_btm_previewExplainList');
-    if (!previewList) return;
- 
-    previewList.innerHTML = '';
- 
-    sajuExplains.forEach(function (item, index) {
-        const card = document.createElement('div');
-        card.className = 'result_btm_previewExplainCard';
-        card.innerHTML = `
-            <div class="result_btm_previewExplainTitle" onclick="togglePreviewExplain(this)">
-                <p>${item.title}</p>
-                <div class="result_explain_toggleBtn">
-                    <img src="resources/img/ui/tab.png" alt="">
-                </div>
-            </div>
-            <div class="result_btm_previewExplainContent">
-                <img src="resources/img/result/explain_sample.webp" alt="">
-            </div>
-        `;
-        previewList.appendChild(card);
-    });
-});
-
- 
-function togglePreviewExplain(element) {
-    const card = element.parentElement;
-    document.querySelectorAll('.result_btm_previewExplainCard').forEach(function (item) {
-        if (item !== card) item.classList.remove('on');
-    });
-    card.classList.toggle('on');
 }
