@@ -567,3 +567,178 @@ function togglePreviewExplain(element) {
     });
     card.classList.toggle('on');
 }
+
+
+
+
+
+
+// 260818 사주결과 리뷰리스트
+
+const dummyReviews = [
+  {
+    meta: "30대 여성 · 오늘",
+    name: "정O영",
+    rating: 5,
+    text: "평소 사주에 관심이 많아 이곳저곳 많이 찾아보는편인데,\n좀 색다른 풀이들이 많아서 신선했어요.\n충분히 추천받을만 합니다^^",
+    icon: "resources/img/animal/saju_rat.webp",
+  },
+  {
+    meta: "40대 남성 · 2일 전",
+    name: "강O우",
+    rating: 5,
+    text: "사주 자체보다 설명 방식이 마음에 들었어요.\n어려운 용어 없이 술술 풀어주셔서 이해하기 편했습니다.",
+    icon: "resources/img/animal/saju_ox.webp",
+  },
+  {
+    meta: "40대 남성 · 어제",
+    name: "박O수",
+    rating: 5,
+    text: "친구 추천으로 알게 됐는데 생각보다 정확해서 놀랐어요.\n주변에도 많이 알려주고 싶네요.",
+    icon: "resources/img/animal/saju_tiger.webp",
+  },
+  {
+    meta: "20대 여성 · 어제",
+    name: "최O은",
+    rating: 4,
+    text: "재미로 봤는데 은근 몰입도 있고 풀이가 상세해서 좋았습니다.",
+    icon: "resources/img/animal/saju_rabbit.webp",
+  },
+  {
+    meta: "30대 남성 · 3일 전",
+    name: "한O진",
+    rating: 5,
+    text: "사실 반신반의하면서 봤는데 생각보다 훨씬 꼼꼼하게 풀어주셔서 놀랐습니다.\n연애운, 재물운 다 궁금했던 부분들이 하나씩 짚어지는 느낌이었고,\n특히 올해 하반기 흐름 설명해주신 부분이 제일 인상 깊었어요.\n주변 친구들한테도 꼭 한번 보라고 추천하고 싶네요. 다음에 또 이용할 것 같습니다.",
+    icon: "resources/img/animal/saju_dragon.webp",
+  },
+  {
+    meta: "20대 여성 · 4일 전",
+    name: "윤O아",
+    rating: 5,
+    text: "비슷한 서비스 여러 번 이용해봤는데 여기가 제일 꼼꼼했어요.\n특히 시기별로 짚어주는 부분이 좋았습니다.",
+    icon: "resources/img/animal/saju_snake.webp",
+  },
+  {
+    meta: "30대 여성 · 5일 전",
+    name: "서O진",
+    rating: 4,
+    text: "가볍게 봤는데 은근 자세해서 좋았어요. 다음에 또 볼 것 같아요.",
+    icon: "resources/img/animal/saju_horse.webp",
+  },
+  {
+    meta: "20대 여성 · 오늘",
+    name: "이O현",
+    rating: 5,
+    text: "평소 사주에 관심이 많아 이곳저곳 많이 찾아보는편인데,\n좀 색다른 풀이들이 많아서 신선했어요.\n충분히 추천받을만 합니다^^",
+    icon: "resources/img/animal/saju_goat.webp",
+  },
+  {
+    meta: "20대 남성 · 6일 전",
+    name: "조O민",
+    rating: 5,
+    text: "친구가 추천해줘서 봤는데 저도 주변에 추천하고 싶네요.\n풀이가 상세해서 좋았습니다.",
+    icon: "resources/img/animal/saju_monkey.webp",
+  },
+  {
+    meta: "40대 여성 · 1주 전",
+    name: "임O경",
+    rating: 5,
+    text: "예전부터 사주 보는 걸 좋아해서 여러 곳 다녀봤는데, 여기는 확실히 다른 느낌이었어요.\n특히 올해 재물운 관련 설명이 자세하고 현실적이어서 도움이 많이 됐습니다.\n주변 지인들한테도 적극 추천하고 있어요.",
+    icon: "resources/img/animal/saju_rooster.webp",
+  },
+  {
+    meta: "30대 남성 · 1주 전",
+    name: "오O훈",
+    rating: 4,
+    text: "재미 삼아 봤는데 생각보다 잘 맞아서 놀랐어요.",
+    icon: "resources/img/animal/saju_dog.webp",
+  },
+  {
+    meta: "20대 여성 · 1주 전",
+    name: "김O아",
+    rating: 5,
+    text: "연말에 봤는데 내년 운세까지 자세히 알려주셔서 좋았어요.\n만족스러운 후기 남깁니다.",
+    icon: "resources/img/animal/saju_pig.webp",
+  },
+];
+
+/* =========================================================
+    2) 데이터 → 슬라이드 HTML 변환 함수
+ ========================================================= */
+function createReviewSlideHTML(review) {
+    const filled = "★".repeat(review.rating);
+    const empty = "☆".repeat(5 - review.rating);
+    const textHTML = review.text.replace(/\n/g, "<br>");
+    const iconHTML = review.icon
+        ? `<div class="review-icon"><img src="${review.icon}" alt="" /></div>`
+        : "";
+
+    return `
+        <div class="swiper-slide review-card">
+            <div class="review-left">
+                <div class="review-meta">${review.meta}</div>
+                <div class="review-name">${review.name}</div>
+                <div class="review-stars">${filled}${empty}</div>
+            </div>
+            <div class="review-right">
+                <div class="review-text">${textHTML}</div>
+            </div>
+            ${iconHTML}
+        </div>
+    `;
+}
+
+/* =========================================================
+    3) 초기 렌더 (Swiper 생성 "전"에 최초 슬라이드부터 심어둔다)
+ ========================================================= */
+    const wrapperEl = document.getElementById("result_reviewWrapper");
+    wrapperEl.innerHTML = dummyReviews.map(createReviewSlideHTML).join("");
+ 
+/* =========================================================
+    4) Swiper 초기화
+    - 세로(direction: vertical) + loop + 표준 autoplay 조합.
+    - "한 장씩 딱딱 위로 올라가고 잠깐 멈췄다가 다음 카드" 방식이라
+        카드 높이가 제각각이어도(가변 높이) 신경 쓸 게 없습니다.
+        Swiper가 알아서 각 슬라이드의 실제 높이를 계산해서 이동시켜줍니다.
+========================================================= */
+const reviewSwiper = new Swiper(".result_reviewSwiper", {
+    direction: "vertical",
+    slidesPerView: "auto",
+    loop: true,
+    loopAdditionalSlides: 4, // 카드 높이가 들쭉날쭉할 때 루프 이음매에서 빈 공간이 생기지 않도록 여유분을 더 복제
+    allowTouchMove: false,   // 사용자가 직접 드래그 못하게(자동 흐름 전용). 드래그 허용하려면 true로.
+    speed: 600,              // 카드 한 장이 위로 올라가는 전환 애니메이션 시간(ms)
+    autoplay: {
+        delay: 2800,           // 다음 카드로 넘어가기 전 멈춰있는 시간(ms)
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, // 마우스 올리면 잠깐 정지
+    },
+});
+ 
+/* =========================================================
+    5) 나중에 백엔드 데이터로 교체할 때 쓸 함수 (예시)
+    - loop 모드에서는 슬라이드를 추가/삭제한 뒤 반드시
+        loopDestroy → 변경 → loopCreate → update 순서를 지켜야
+        중복 계산이 꼬이지 않습니다.
+========================================================= */
+function updateReviewSlides(newReviews) {
+    reviewSwiper.autoplay.stop();
+    reviewSwiper.loopDestroy();
+ 
+    wrapperEl.innerHTML = newReviews.map(createReviewSlideHTML).join("");
+ 
+    reviewSwiper.loopCreate();
+    reviewSwiper.update();
+    reviewSwiper.autoplay.start();
+}
+ 
+  // 실제 연동 예시 (지금은 주석 처리):
+  //
+  // async function loadReviewsFromServer() {
+  //   const res = await fetch("/api/reviews");
+  //   const data = await res.json(); // [{ meta, name, rating, text, icon }, ...] 형태로 맞춰서 응답
+  //   updateReviewSlides(data);
+  // }
+  // loadReviewsFromServer();
+
+

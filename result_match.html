@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>궁합 결과</title>
 </head>
 <body>
@@ -164,7 +170,17 @@
             <div></div>
             <h2 style="font-size: 2.5em;">”두 사람의 이야기,<br>아직 절반도 꺼내지 않았다.<br>그대, 끝까지 마주할<br>준비가 되었는가?”</h2>
         </div>
+        <div class="result_reviewSlide_box">
         <img src="resources/img/result/match_btm.webp" alt="">
+        <!-- 리뷰용 슬라이드 추가 -->
+        <div class="result_reviewSlide">
+            <div class="swiper result_reviewSwiper">
+                <div class="swiper-wrapper" id="result_reviewWrapper">
+                    <!-- 카드들은 전부 JS에서 주입됩니다. -->
+                </div>
+            </div>
+        </div>
+        </div>
         <div class="main_sec3_preSajuBtn"><a href="./register_prem.html" class="openPayment" style="font-size: .85em;">8가지 정밀 궁합해설 보기 </a></div>
                 <div class="result_btm_previewExplainList"></div>
 
