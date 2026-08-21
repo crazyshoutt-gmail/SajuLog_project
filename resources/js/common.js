@@ -774,7 +774,7 @@ if (modal.classList.contains("type2")) {
 
 // ★ match (궁합 결과 페이지 전용 모달) 처리
 if (modal.classList.contains("match")) {
-    modalTitle.innerHTML = "궁합을 자세히 알아야<span>미래에 대처가<br>가능하다네</span>";
+    modalTitle.innerHTML = "두 사람의 앞날을 미리 안다면,<span>인연을 대하는 마음도 달라질 걸세.</span>";
     modal.querySelector(".price_choice").style.display = "";
     productChoice.classList.add("show");
     productBtns[0].classList.remove("active");
