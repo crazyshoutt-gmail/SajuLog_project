@@ -66,10 +66,6 @@ const sajuExplains = [
     {
         title: "전생 인연 — 우리는 왜 만났을까?",
         content: "사주명리학에서는 현생의 깊은 인연 뒤에 전생의 업(業)이 작용한다고 봅니다. 두 사람의 사주에는 공통된 지지(地支) 암합의 흔적이 있어, 단순한 우연이 아닌 필연적 끌림으로 만나게 된 인연임을 암시합니다. 전생에서 미처 매듭짓지 못한 인연이 이번 생에 다시 이어진 것으로, 서로에게 배워야 할 것과 나누어야 할 것이 분명히 존재합니다."
-    },
-    {
-        title: "조언 및 해결책",
-        content: "두 사람이 오랫동안 좋은 관계를 유지하기 위해서는 서로의 페이스를 존중하는 것이 가장 중요합니다. 갈등이 생겼을 때는 감정이 가라앉은 후 대화하는 것을 권장하며, 목(木) 기운이 강한 봄철과 동쪽 방향이 두 사람 모두에게 길한 기운을 불어넣어 주는 시기와 방향입니다."
     }
 ];
 
@@ -492,23 +488,31 @@ function unlockPremium() {
     const btmCta = document.querySelector('.js_result_btm_cta');
     const btmBlur = document.querySelector('.result_btm_previewExplainList');
     const btmExplainList = document.querySelector('.js_result_btm_explainList');
+  const premiumCta = document.querySelector('.result_btm .main_sec3_preSajuBtn');
+    const shareBtn = document.querySelector('.js_result_match_shareBtn');
     const premiumBtn = document.querySelector('.main_preSajuBtn_btm');
 
     // 기존 "들여다보기" CTA 제거
     if (btmCta) {
         btmCta.style.setProperty('display', 'none', 'important');
     }
+    if (premiumCta) {
+      premiumCta.style.setProperty('display', 'none', 'important');
+    }
+    if (shareBtn) {
+      shareBtn.style.setProperty('display', 'flex', 'important');
+    }
 
-    // 블러 제거
+    // 결제 후 하단 해설 목록을 텍스트로 전환
     if (btmBlur) {
-        btmBlur.style.setProperty('display', 'none', 'important');
+      btmBlur.style.setProperty('display', 'block', 'important');
     }
 
     // 라이트 해설 노출
     if (btmExplainList) {
         btmExplainList.style.setProperty('display', 'block', 'important');
-        renderExplainsBtm();
     }
+    renderPreviewExplains(true);
 
     // "프리미엄도 보러가기" 노출
     if (premiumBtn) {
@@ -535,8 +539,8 @@ if (resultBtm) resultBtm.classList.add('premium_unlocked');
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const previewList = document.querySelector('.result_btm_previewExplainList');
+function renderPreviewExplains(isUnlocked) {
+  const previewList = document.querySelector('.result_btm_previewExplainList');
     if (!previewList) return;
  
     previewList.innerHTML = '';
@@ -552,12 +556,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
             <div class="result_btm_previewExplainContent">
-                <img src="resources/img/result/explain_sample.webp" alt="">
+              ${isUnlocked
+                ? `<p>${item.content}</p>`
+                : '<img src="resources/img/result/explain_sample.webp" alt="">'}
             </div>
         `;
         previewList.appendChild(card);
     });
-});
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        renderPreviewExplains(false);
+      });
 
  
 function togglePreviewExplain(element) {

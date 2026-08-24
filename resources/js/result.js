@@ -1077,7 +1077,7 @@ function purchase_trueOpenPage(){
     document.querySelector('.result_moreSaju_btns').classList.add('active');
 }
 
-function applySajuPurchaseState(force = false) {
+function applySajuPurchaseState(force = false, purchasedProduct = null) {
 
     if (!force) return;
 
@@ -1095,7 +1095,7 @@ function applySajuPurchaseState(force = false) {
     // ========================================
     // 정통사주를 가지고 있으면 정통 결과 해제
     // ========================================
-    if (purchase.traditional) {
+    if (purchasedProduct === "traditional" || purchasedProduct === "package" || (!purchasedProduct && purchase.traditional)) {
 
         if (typeof unlockPremium === "function") {
             unlockPremium();
@@ -1121,7 +1121,7 @@ function applySajuPurchaseState(force = false) {
     // 미래사주까지 이미 가지고 있음
     // 패키지도 future:true이므로 여기 해당
     // ========================================
-    if (purchase.future) {
+    if (purchasedProduct === "future" || (!purchasedProduct && purchase.future)) {
 
         premiumBtn.textContent = "미래사주 넘어가기";
 
@@ -1139,7 +1139,7 @@ function applySajuPurchaseState(force = false) {
     // ========================================
     // 정통사주만 구매함
     // ========================================
-    if (purchase.traditional) {
+    if (purchasedProduct === "traditional" || (!purchasedProduct && purchase.traditional && !purchase.future)) {
 
         premiumBtn.textContent = "나의 미래흐름 확인하기";
         purchase_trueOpenPage();

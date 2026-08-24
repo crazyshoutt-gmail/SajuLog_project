@@ -821,7 +821,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (e) => {
  
         const productBtns = e.target.closest(".js_product_btn");
-        if (!productBtns[0]) return;
+        if (!productBtns) return;
  
         // 990원 체험판(trial) 케이스는 common.js의 unlock 로직이 담당하므로 제외
         if (trackedPaymentType === "trial") return;
@@ -845,8 +845,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let target = null;
         if (currentPage === "result.html" || currentPage === "result_again.html") {
             target = "./result_prem.html";
-        } else if (currentPage === "result_match.html") {
-            target = "./result_match_full.html";
         }
  
         if (target) {
@@ -1211,7 +1209,9 @@ if (productType === "traditional") {
 
     // result.html의 정통사주 영역 즉시 해제
     if (typeof applySajuPurchaseState === "function") {
-        applySajuPurchaseState(true);
+        applySajuPurchaseState(true, productType);
+    } else if (typeof unlockPremium === "function") {
+        unlockPremium();
     }
 
     closeModal();
@@ -1245,7 +1245,9 @@ if (productType === "package") {
 
     // 패키지에는 정통사주가 포함되어 있으므로 result.html 해제
     if (typeof applySajuPurchaseState === "function") {
-        applySajuPurchaseState(true);
+        applySajuPurchaseState(true, productType);
+    } else if (typeof unlockPremium === "function") {
+        unlockPremium();
     }
 
     closeModal();
