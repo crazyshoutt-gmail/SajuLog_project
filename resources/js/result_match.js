@@ -6,16 +6,16 @@ const sajuResult = {
         userPart:"친구",
         userAni:"dog",
         userAnicolor:"blue",
-        userKeywords:['계사', '을유', '계미', '무오'],
-        userProf:"1994년 05월 31일 | 양력 | 13:35 | 남성"
+        userKeywords:['정미 (붉은 양)'],
+        userProf:"1994년 | 양력 | 13:35"
     },
     user2: {
         userName:"user2",
         userPart:"친구",
         userAni:"dragon",
         userAnicolor:"blue",
-        userKeywords:['계사', '을미', '계오', '무유'],
-        userProf:"1994년 05월 31일 | 양력 | 13:35 | 여성"
+        userKeywords:['병인 (붉은 호랑이)'],
+        userProf:"1994년 | 양력 | 13:35"
     }
 };
 
@@ -99,12 +99,12 @@ function renderSaju() {
         const card = cards[i];
         if (!card) return;
 
-        card.querySelector('.js_result_userProf_names').textContent = `${user.userName} | ${user.userPart}`;
+        card.querySelector('.js_result_userProf_names').innerHTML = `${user.userName}<span class="result_userProf_part">${user.userPart}</span>`;
         const otherUser = users[i === 0 ? 1 : 0];
         const animEl = card.querySelector('.js_result_userProf_anim');
         animEl.innerHTML = user.userKeywords.map(k => {
             const isOverlap = otherUser.userKeywords.includes(k);
-            return `<span class="kw${isOverlap ? ' kw_gold' : ''}">#${k}</span>`;
+            return `<span class="kw${isOverlap ? ' kw_gold' : ''}">${k}</span>`;
         }).join(' ');
         card.querySelector('.js_result_userProf_etc').textContent = user.userProf;
 
@@ -126,7 +126,7 @@ function renderSaju() {
     const keywordBox = document.querySelector('.js_result_match_sec3_userKeywordBox');
     if (keywordBox) {
         keywordBox.innerHTML = sajuMatch.countTable.usersrelationKeyword
-            .map(k => `<p>#${k}</p>`)
+            .map(k => `<p>${k}</p>`)
             .join('');
     }
 }

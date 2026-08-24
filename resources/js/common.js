@@ -57,17 +57,13 @@ const mainMenuCon =`
     <section class="mainMenu js_mainMenu">
         <div class="mainMenu_userBox">
             <h1 class="js_userName">User</h1>
-            <p class="js_userData1">남성 | 1988.04.02 | 02:30 | --띠 | </p>
+
             <div class="mainMenu_cashBox" style=" pointer-events: none; opacity: 0; font-size:0.3em;">
                 <div class="mainMenu_ticket_count">
                     <p>이용권</p>
                     <p><b>0</b>개</p>
                 </div>
-                <div class="mainMenu_mov_productBtns[0]">
-                    <a href="./product.html">
-                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_ticketbox.webp" alt="">
-                    </a>
-                </div>
+
             </div>
             <div class="mainMenu_userBox_str"></div>
         </div>

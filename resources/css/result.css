@@ -308,7 +308,7 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 
 
 .result_usersProfBox{
-    width: 100%; height: fit-content; position: relative;
+    width: 95%; margin: 0 auto; height: fit-content; position: relative;
 }
 .result_usersProf{
     width: 100%; height: 100%; position: absolute; padding: 5%; text-align: center;
@@ -322,7 +322,7 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 }
 
 .result_userProf_anim{
-    font-size: 1.3em; margin: 1em auto;
+    font-size: 1.3em; margin: .5em auto;
 }
 
 .result_userAni1{
@@ -1140,6 +1140,7 @@ padding-bottom: 0.55lh;
 .result_btm_previewExplainTitle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; } 
 .result_btm_previewExplainContent { display: none; }
 .result_btm_previewExplainCard.on .result_btm_previewExplainContent { display: block; }
+
 .result_btm_previewExplainContent p { margin: 0; padding: 4% 4% 6%; font-family: 'BookendBatang'; font-size: 1.45em;
     line-height: 1.8; text-align: center; color: rgba(255, 255, 255, 0.85); word-break: keep-all; text-align: left; }
 
@@ -1317,3 +1318,5 @@ color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding:
 /* 260824 */
 .result_match_btm .result_explain_toggleBtn img { height: 1em; }
 .match_reviewSlide { margin-top: -20%; }
+
+.result_userProf_part { display: block; font-size: 0.7em; margin-top: .5em; }

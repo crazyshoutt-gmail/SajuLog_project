@@ -407,6 +407,8 @@ document.querySelector('.register_match_addUserPopup_sec')?.classList.add('off')
     // 라디오 / 직접입력 처리
     const radios = document.querySelectorAll('input[type="radio"][name="option3"]');
     const directInput = document.querySelector('.js_register_userrelation_direct');
+    const optionBox = document.querySelector('.js_optionBox');
+    const optionBoxRelations = ['op3_7', 'op3_8', 'op3_9', 'op3_10'];
 
     if (radios.length && directInput) {
         radios.forEach(radio => {
@@ -414,6 +416,7 @@ document.querySelector('.register_match_addUserPopup_sec')?.classList.add('off')
                 directInput.value = '';
                 directInput.removeAttribute('name');
                 radios.forEach(r => r.name = 'option3');
+                optionBox?.classList.toggle('active', optionBoxRelations.includes(radio.id));
             });
         });
 
@@ -423,6 +426,7 @@ document.querySelector('.register_match_addUserPopup_sec')?.classList.add('off')
                 r.removeAttribute('name');
             });
             directInput.name = 'option3';
+            optionBox?.classList.remove('active');
         });
     }
 });
