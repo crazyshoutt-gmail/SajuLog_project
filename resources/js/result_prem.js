@@ -431,7 +431,8 @@ document.querySelectorAll('.result_prem_toggleBox').forEach(box => {
         const isOpen = box.classList.contains('is-open');
 
         if (isOpen) {
-            content.style.height = content.scrollHeight + 'px';
+            content.style.height = content.offsetHeight + 'px';
+            content.style.overflow = 'hidden';
 
             requestAnimationFrame(() => {
                 box.classList.remove('is-open');
@@ -440,6 +441,13 @@ document.querySelectorAll('.result_prem_toggleBox').forEach(box => {
         } else {
             box.classList.add('is-open');
             content.style.height = content.scrollHeight + 'px';
+
+            content.addEventListener('transitionend', () => {
+                if (box.classList.contains('is-open')) {
+                    content.style.height = 'auto';
+                    content.style.overflow = 'visible';
+                }
+            }, { once: true });
         }
     });
 });
