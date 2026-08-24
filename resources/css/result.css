@@ -1113,7 +1113,7 @@ background-clip: text;
 /* 260812 */
 .result_explainCard { color: #fff }
 
-.crt_pointGradient, .result_btm_previewExplainTitle p { font-size: 1.35em; display: inline-block;
+.crt_pointGradient, .result_btm_previewExplainTitle p { font-size: 1.55em; display: inline-block;
 font-family: 'MaruBuri';
 background: linear-gradient(0deg, #fff 10%, #caac7b 95%);
 -webkit-background-clip: text;
