@@ -1348,3 +1348,52 @@ function saveSajuPurchase(productType) {
 
     return state;
 }
+
+
+
+// 260824
+
+
+
+// 특정 결제 버튼 클릭 시 해당 상품만 노출
+(function () {
+    function filterPaymentProduct(targetProduct) {
+        const modal = document.querySelector('#paymentModal');
+        if (!modal) return;
+
+        const productCards = modal.querySelectorAll('.produc_choice_card');
+
+        productCards.forEach(card => {
+            const isTarget = !targetProduct ||
+                card.dataset.target === targetProduct;
+
+            card.style.display = isTarget ? '' : 'none';
+            card.setAttribute('aria-hidden', String(!isTarget));
+
+            if (!isTarget) {
+                card.classList.remove('active');
+            }
+        });
+
+        const targetCard = modal.querySelector(
+            `.produc_choice_card[data-target="${targetProduct}"]`
+        );
+
+        // 기존 initType3Payment의 상품 선택 로직 실행
+        if (targetCard) {
+            targetCard.click();
+        }
+    }
+
+    document.addEventListener('click', function (event) {
+        const paymentButton = event.target.closest('.openPayment');
+        if (!paymentButton) return;
+
+        const targetProduct =
+            paymentButton.dataset.productTarget || null;
+
+        // common.js의 모달 오픈보다 먼저 상품 필터 적용
+        filterPaymentProduct(targetProduct);
+    }, true);
+})();
+

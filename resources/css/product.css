@@ -171,22 +171,22 @@ border-radius: .3em; font-weight: 100; }
     display: flex; align-items: center; margin-bottom: 0.5lh; margin-bottom: 2%;
 }
 .produc_choice_card_L h2{
-    font-family: 'BookendBatang'; font-size: 4cqw;
+    font-family: 'BookendBatang'; font-size: 5.5cqw;
 }
 .produc_choice_card_L span{
     background-color: #A20000; padding: 0.2lh 0.5lh; line-height: 100%; border-radius: 0.5cqw; margin-left: 0.5cqw;
 }
 .produc_choice_card_L p{
-    font-size: 3cqw; color: #D7B783;
+    font-size: 4cqw; color: #D7B783;
 }
 
 .produc_choice_card_R{
     display: flex; justify-content: space-between; flex-direction: column; align-items: end;  text-align: right;
 }
 .produc_choice_card_R h2{
-    font-size: 4.2cqw; color: #D7B783; margin-bottom: 3%;
+    font-size: 5cqw; color: #D7B783; margin-bottom: 3%;
 }
-.produc_choice_card_R p{font-size: 3cqw; width: fit-content; padding: 0 0.1em; border-bottom: 1px solid white;}
+.produc_choice_card_R p{font-size: 3.5cqw; width: fit-content; padding: 0 0.1em; border-bottom: 1px solid white;}
 
 .payment_modal.type3 .product_policy{
     width: 95%; margin: auto;
@@ -194,3 +194,6 @@ border-radius: .3em; font-weight: 100; }
 
 .proudct_choice_explainCard{display: none;}
 .proudct_choice_explainCard.active{display: block;}
+
+
+/* 260824 */

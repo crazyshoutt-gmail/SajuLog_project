@@ -1124,6 +1124,7 @@ function applySajuPurchaseState(force = false, purchasedProduct = null) {
     if (purchasedProduct === "future" || (!purchasedProduct && purchase.future)) {
 
         premiumBtn.textContent = "미래사주 넘어가기";
+        premiumBtn.removeAttribute("data-product-target");
 
         // 결제모달이 열리지 않도록 openPayment 제거
         premiumBtn.classList.remove("openPayment");
@@ -1142,6 +1143,7 @@ function applySajuPurchaseState(force = false, purchasedProduct = null) {
     if (purchasedProduct === "traditional" || (!purchasedProduct && purchase.traditional && !purchase.future)) {
 
         premiumBtn.textContent = "나의 미래흐름 확인하기";
+        premiumBtn.dataset.productTarget = "2";
         purchase_trueOpenPage();
 
         // 이 버튼은 다시 결제모달을 열어야 함
@@ -1157,3 +1159,78 @@ function applySajuPurchaseState(force = false, purchasedProduct = null) {
 document.addEventListener("DOMContentLoaded", () => {
     applySajuPurchaseState(false);
 });
+
+
+// 260824 결제수정
+// 미래사주 카드 오른쪽 영역만 수정
+(function () {
+    let customizeRequested = false;
+
+    function customizeFutureProductRight() {
+        if (!customizeRequested) return false;
+
+        const rightBox = document.querySelector(
+            '.produc_choice_card[data-target="2"] .produc_choice_card_R'
+        );
+
+        if (!rightBox || rightBox.dataset.customized === 'true') return false;
+
+        rightBox.classList.add('produc_choice_card_future');
+
+        const detail = rightBox.querySelector('p');
+        const price = rightBox.querySelector('h2');
+
+        // 텍스트 수정
+        if (price) {
+            price.textContent = '7,000원';
+        }
+
+        if (detail) {
+            detail.textContent = '상세보기';
+        }
+
+        // 오른쪽 영역 스타일 수정
+        rightBox.style.color = '#ddc49b';
+
+        if (price) {
+            price.style.color = '#DDC49B';
+            price.style.fontWeight = '700';
+        }
+
+        if (detail) {
+            detail.style.color = '#fff';
+            detail.style.fontWeight = '500';
+        }
+
+        rightBox.dataset.customized = 'true';
+        return true;
+    }
+
+    document.addEventListener('click', function (event) {
+        const paymentButton = event.target.closest(
+            '.openPayment[data-product-target="2"]'
+        );
+
+        customizeRequested = Boolean(paymentButton);
+
+        if (customizeRequested) {
+            customizeFutureProductRight();
+        }
+    }, true);
+
+    // 결제 모달이 동적으로 생성되는 경우
+    const paymentContainer = document.querySelector('#paymentContainer');
+
+    if (paymentContainer) {
+        const observer = new MutationObserver(() => {
+            if (customizeFutureProductRight()) {
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(paymentContainer, {
+            childList: true,
+            subtree: true
+        });
+    }
+})();
