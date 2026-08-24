@@ -1113,13 +1113,16 @@ background-clip: text;
 /* 260812 */
 .result_explainCard { color: #fff }
 
-.crt_pointGradient, .result_btm_previewExplainTitle p { font-size: 1.55em; display: inline-block;
+.crt_pointGradient, .result_btm_previewExplainTitle p { font-size: 1.35em; display: inline-block;
 font-family: 'MaruBuri';
 background: linear-gradient(0deg, #fff 10%, #caac7b 95%);
 -webkit-background-clip: text;
-background-clip: text;
-color: transparent;
--webkit-text-fill-color: transparent; }
+background-clip: text; line-height: 1.5;
+color: transparent; font-weight: 800;
+-webkit-text-fill-color: transparent;
+padding-top: 0.6lh;
+padding-bottom: 0.55lh;
+}
 .result_explainCard .result_explainCard_txt p { font-family: 'BookendBatang'; line-height: 150%; text-align: left; }
 .main_preSajuBtn_btm { margin: 10% auto 0%  !important; }
 .result_btm.premium_unlocked::after { display: none !important; }
