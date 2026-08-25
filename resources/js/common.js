@@ -87,17 +87,17 @@ const mainMenuCon =`
 
 
 const footerCon = `
-        <footer>
             <div class="inner">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고">
-                <p>
-                    상호명 : 주식회사 위드어스<br>
-                    대표 이경식<br>
-                    사업자등록번호 332-88-03445<br>
-                    경기도 부천시 원미구 소향로 37번길 31-7<br>
-                    withusmkt@daum.net<br>
-                    0507-1356-1719
-                </p>
+                <div class="footer_bizinfo" style="display: grid; grid-template-columns: max-content 1fr; gap: 0.25em 0.6em; text-align: left; color: rgb(153, 153, 153); font-weight: 200; margin-bottom: 1em;">
+                    <span style="opacity: 0.7;">상호명</span><span>(주)위드어스</span>
+                    <span style="opacity: 0.7;">대표자</span><span>이경식</span>
+                    <span style="opacity: 0.7;">사업자등록번호</span><span>332-88-03445</span>
+                    <span style="opacity: 0.7;">통신판매번호</span><span>사업자등록번호 332-88-03445</span>
+                    <span style="opacity: 0.7;">주소</span><span>경기도 부천시 원미구 소향로 37번길 31-7</span>
+                    <span style="opacity: 0.7;">이메일</span><span>withusmkt@daum.net</span>
+                    <span style="opacity: 0.7;">전화</span><span>0507-1356-1719</span>
+                </div>
                 <ul>
                     <li><span id="aboutBtn" class="js_policy_btn">회사소개 |</span></li>
                     <li><span id="termsBtn" class="js_policy_btn">이용약관 |</span></li>
@@ -105,7 +105,6 @@ const footerCon = `
                     <li><span id="moneyBtn" class="js_policy_btn">환불정책</span></li>
                 </ul>
             </div>
-        </footer>
 `;
 
 
