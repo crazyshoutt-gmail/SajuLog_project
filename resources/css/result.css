@@ -1293,7 +1293,7 @@ color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all; padding: 
 .result_prem_grTxt .crt_hei { color: #fff; font-weight: 600; width: fit-content;
 height: fit-content; display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height: 1lh; font-size: 1.05em;}
 
-.result_prem_warning_title{ color: white; text-align: center; font-family: 'BookendBatang'; margin-bottom: 5%; margin-top: 5%; }
+.result_prem_warning_title{ color: white; text-align: center; font-family: 'BookendBatang'; margin-bottom: 7%; margin-top: 5%; }
 .result_prem_warning_title h3{ font-size: 4.5cqw; }
 
 .result_prem_warning_title h3 span { color: #DDC49C;}
@@ -1303,12 +1303,12 @@ height: fit-content; display: inline-block; background-color: #553f0f; padding: 
 background: linear-gradient(30deg,#f0cc7e 0%, #f4db8c 28%, #f9f3e5 53%, #c78a03 78%, #efca84 94%);
 -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
 .result_prem_warning_tBox{ width: 100%; position: relative; color: white; }
-.result_prem_warning_card{ text-align: center; width: 90%; margin: auto;  margin-bottom: 7%; }
+.result_prem_warning_card{ text-align: center; width: 90%; margin: auto;  margin-bottom: 8%; }
 .result_prem_warning_card:nth-last-child(1){margin-bottom: 0%;}
 .result_prem_warning_card h2{ font-size: 8.5cqw; margin-bottom: 1%; font-family: 'BookendBatang'; color: #DDC49C; }
 .result_prem_warning_card p{ font-size: 5.5cqw; border: 1px solid #DDC49C; border-style: inset; background-color: #00000070; padding: 3% 0; border-radius: 0.5em; }
 .result_prem_warningTxt{ font-size: 4cqw;font-family: 'BookendBatang'; line-height: 1.7; text-align: center; 
-color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding: 10% 2.5%; }
+color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding: 13% 2.5%; }
 
 .result_prem_warningTxt strong{color: #DDC49C; font-weight: bold;}
 .result_prem_warningTxt .crt_hei { color: #fff; font-weight: 600; width: fit-content; height: fit-content; display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height: 1lh; font-size: 1.05em;}
