@@ -202,7 +202,7 @@ transition: 0.3s;
 .result_lockBtnBoxka span{font-size: 1em; opacity: 0.7; font-weight: 300; margin-top: 0.3em; display: inline-block;}
 
 .result_explainTxtBox{
-    text-align: center; padding-top: 5%; font-size: 1.45em; line-height: 1.5;
+    text-align: center; padding-top: 5%; font-size: 1.45em; line-height: 1.7;
     width: 95%; margin: auto; overflow: hidden; word-break: keep-all; font-weight: 400;
     display: none !important;
 }
@@ -402,8 +402,8 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 .result_match_userCount p{
     margin-bottom: 0.5em;
 }
-.result_match_userCount div{display: flex; justify-content: center; align-items: end; gap: 0.2em; font-size: 2.3em;}
-.result_match_userCount div h4{transform: translateY(-15%);}
+.result_match_userCount div{display: flex; justify-content: center; align-items: end; gap: 0.2em; font-size: 2.3em; line-height: 1; }
+.result_match_userCount div h4{transform: translateY(-15%); }
 .result_match_sec2_txt{
     width:95%; margin: auto; padding: 5% 0; color: white; text-align: center;
 }
@@ -1088,7 +1088,7 @@ font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_explainTitle { margin: -5% 0 5%; }
 .result_explainTitle img { width: 97%; margin: 0 auto; display: block; }
 
-.result_extit {  margin-bottom: 1.5em; }
+.result_extit {  margin-bottom: 1em; }
 .result_extit span { color: #635639; font-size: 7em; line-height: 100%; }
 .result_extit strong { color: #DDC49B; font-size: 1.6em; font-weight: 700; display: block; margin-top: -2.5em; line-height: 130%; }
 
@@ -1289,11 +1289,11 @@ height: 2em; }
 section{container-type: inline-size;}
 
 .result_prem_grTxt{ font-size: 4cqw;font-family: 'BookendBatang'; line-height: 1.7; text-align: center;  
-color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all; padding: 5% 2.5%; }
+color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all; padding: 5% 2.5% 10%; }
 .result_prem_grTxt .crt_hei { color: #fff; font-weight: 600; width: fit-content;
 height: fit-content; display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height: 1lh; font-size: 1.05em;}
 
-.result_prem_warning_title{ color: white; text-align: center; font-family: 'BookendBatang'; margin-bottom: 7%; margin-top: 5%; }
+.result_prem_warning_title{ color: white; text-align: center; font-family: 'BookendBatang'; margin-bottom: 5%; }
 .result_prem_warning_title h3{ font-size: 4.5cqw; }
 
 .result_prem_warning_title h3 span { color: #DDC49C;}
@@ -1303,15 +1303,16 @@ height: fit-content; display: inline-block; background-color: #553f0f; padding: 
 background: linear-gradient(30deg,#f0cc7e 0%, #f4db8c 28%, #f9f3e5 53%, #c78a03 78%, #efca84 94%);
 -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
 .result_prem_warning_tBox{ width: 100%; position: relative; color: white; }
-.result_prem_warning_card{ text-align: center; width: 90%; margin: auto;  margin-bottom: 8%; }
+.result_prem_warning_card{ text-align: center; width: 90%; margin: auto;  }
 .result_prem_warning_card:nth-last-child(1){margin-bottom: 0%;}
 .result_prem_warning_card h2{ font-size: 8.5cqw; margin-bottom: 1%; font-family: 'BookendBatang'; color: #DDC49C; }
 .result_prem_warning_card p{ font-size: 5.5cqw; border: 1px solid #DDC49C; border-style: inset; background-color: #00000070; padding: 3% 0; border-radius: 0.5em; }
 .result_prem_warningTxt{ font-size: 4cqw;font-family: 'BookendBatang'; line-height: 1.7; text-align: center; 
-color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding: 13% 2.5%; }
+color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding: 5% 2.5% 0; }
 
 .result_prem_warningTxt strong{color: #DDC49C; font-weight: bold;}
-.result_prem_warningTxt .crt_hei { color: #fff; font-weight: 600; width: fit-content; height: fit-content; display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height: 1lh; font-size: 1.05em;}
+.result_prem_warningTxt .crt_hei { color: #fff; font-weight: 600; width: fit-content; height: fit-content; 
+display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height: 1lh; font-size: 1.05em;}
 
 .crt_chTitle{font-family: 'MaruBuri'; font-size: 2em;}
 
@@ -1322,5 +1323,8 @@ color: rgba(255, 255, 255, 1); font-weight: 400; word-break: keep-all ; padding:
 .result_userProf_part { display: block; font-size: 0.7em; margin-top: .5em; }
 
 /* 260826 */
-
 .result_prem_grTxt::after { content: ''; width: 1px; height: 4em; background: linear-gradient(#fff, #666); display: block; margin: 2em auto 0; }
+
+/* 260827 */
+.warning_box:first-child { margin-bottom: 15%; }
+.warning_box { margin-bottom: 10%; }
