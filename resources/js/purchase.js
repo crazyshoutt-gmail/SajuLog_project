@@ -25,15 +25,21 @@ async function loadAndRenderList() {
                             </p>
                         </div>
                         <div class="purchase_btnBox">
-                            <div class="purchase_complateBtn">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_com.webp" alt="완료">
-                            </div>
-                            <div class="purchase_delateBtn" onclick="deleteUser(${index}, event)">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_del.webp" alt="삭제">
-                            </div>
-                            <div class="purchase_aditBtn" onclick="goToEdit(${index}, event)">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_adit.webp" alt="수정">
-                            </div>
+                            ${user.name === '박지현' ? `
+                                <div class="purchase_waitBtn">
+                                    <img src="./resources/img/purchase_userList/user_wait.png" alt="대기 중">
+                                </div>
+                            ` : `
+                                <div class="purchase_complateBtn">
+                                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_com.webp" alt="완료">
+                                </div>
+                                <div class="purchase_delateBtn" onclick="deleteUser(${index}, event)">
+                                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_del.webp" alt="삭제">
+                                </div>
+                                <div class="purchase_aditBtn" onclick="goToEdit(${index}, event)">
+                                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_adit.webp" alt="수정">
+                                </div>
+                            `}
                         </div>
                     </div>
                     <div class="purchase_dataBox js_data_box_${index}">
